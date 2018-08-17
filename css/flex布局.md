@@ -222,7 +222,7 @@ flex-direction 属性决定主轴的方向（即项目的排列方向）。
 }
 ```
 以下:
-![enter description here][12]
+![enter description here](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png)
 
 
 ### 4.2 flex-grow属性
