@@ -238,7 +238,7 @@ flex-direction 属性决定主轴的方向（即项目的排列方向）。
 ```
 
 以下：
-![enter description here][13]
+![enter description here](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png)
 
 如果所有项目的==flex-grow==属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的==flex-grow==属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
 
