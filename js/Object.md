@@ -3,3 +3,7 @@ title: Object
 ---
 该Object构造函数会为给定值的对象包装程序。如果值为null或undefined，则它将创建并返回一个空对象，否则，它将返回与给定值对应的Type对象。如果值已经是一个对象，它将返回该值。
 
+## 1. Object.length
+值为1
+
+## 2. Object.prototype
