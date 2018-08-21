@@ -7,3 +7,7 @@ title: Object
 值为1
 
 ## 2. Object.prototype
+
+该Object.prototype属性表示Object原型对象
+
+JavaScript中的几乎所有对象都是**Object**; 典型对象继承属性（包括方法）**Object.prototype**，尽管这些属性可能被遮蔽（也称为被覆盖）。然而，Object可能是故意创建的，这不是真的（例如，通过**Object.create(null)）**，或者可能被改变以使其不再是真的（例如，有**Object.setPrototypeOf**）。
