@@ -40,3 +40,13 @@ title: 移动端 300 毫秒点击延迟
 * **指针事件 (Pointer Events)**
 
   指针事件最初由微软提出。**touch-action**这个CSS属性。这个属性指定了相应元素上能够触发的用户代理（也就是浏览器）的默认行为。如果将该属性值设置为**touch-action: none**，那么表示在该元素上的操作不会触发用户代理的任何默认行为，就无需进行300ms的延迟判断。
+  
+  例如，下面的代码在 IE10 和 IE11 上移除了所有链接和按钮元素的点击延迟。
+  ```css
+  a[href], button {
+    -ms-touch-action: none; /* IE10 */
+    touch-action: none;     /* IE11 */
+   }
+  ```
+  
+  注意： 但就目前而言，只有 Internet Explorer 实现了指针事件，不过近期 Chrome 也宣布了将在未来的版本中提供支持。
