@@ -73,3 +73,9 @@ title: 移动端 300 毫秒点击延迟
 	简而言之，FastClick 在检测到 touchend 事件的时候，会通过 DOM 自定义事件立即触发一个模拟 click 事件，并把浏览器在 300 毫秒之后真正触发的 click 事件阻止掉。
 	
 	FastClick 的使用方法非常简单，在 window load 事件之后，在 < body >上调用 
+	
+	```js
+	window.addEventListener( "load", function() {
+		FastClick.attach( document.body );
+	}, false );
+	```
