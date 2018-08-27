@@ -72,4 +72,4 @@ title: 移动端 300 毫秒点击延迟
     FastClick 是 FT Labs 专门为解决移动端浏览器 300 毫秒点击延迟问题所开发的一个轻量级的库。
 	简而言之，FastClick 在检测到 touchend 事件的时候，会通过 DOM 自定义事件立即触发一个模拟 click 事件，并把浏览器在 300 毫秒之后真正触发的 click 事件阻止掉。
 	
-	FastClick 的使用方法非常简单，在 window load 事件之后，在 <body上调用 
+	FastClick 的使用方法非常简单，在 window load 事件之后，在 < body >上调用 
