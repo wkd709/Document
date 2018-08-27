@@ -33,3 +33,6 @@ title: 移动端 300 毫秒点击延迟
    ```html
    <meta name="viewport" content="width=device-width">
    ```
+   这条代码告诉浏览器将视口大小设为设备本身的尺寸。
+   
+   在 Chrome 32 这一版中，他们将在包含 width=device-width 或者置为比 viewport 值更小的页面上禁用双击缩放。当然，没有双击缩放就没有 300 毫秒点击延迟。这一解决方案的另一个关键之处在于它只是去除了双击缩放，但用户仍可以使用双指缩放 (pinch to zoom)。可见，缩放功能并非被完全禁用，也就不存在可用性和可访问性的问题了。
