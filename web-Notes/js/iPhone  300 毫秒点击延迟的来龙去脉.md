@@ -13,6 +13,7 @@ title: iPhone  300 毫秒点击延迟的来龙去脉
 **解决办法**
 
 *  **禁用缩放**
+
     ```html
 	<meta name="viewport" content="user-scalable=no">
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
