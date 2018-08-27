@@ -57,7 +57,7 @@ title: 移动端 300 毫秒点击延迟
 
 不过，已经有好多开发者考虑过这一问题，并带来了一些基于 JavaScript 的跨平台解决方案。
 
-* 指针事件的 polyfill
+* **指针事件的 polyfill**
  
   指针事件的 polyfill 比较多，以下列出比较流行的几个。
   
@@ -66,3 +66,10 @@ title: 移动端 300 毫秒点击延迟
   (3). @Rich-Harris 的 **Points**
   
   由于除了IE之外的大部分浏览器都不支持这个新的CSS属性，所以这些指针事件的polyfill必须通过某种方式去模拟支持这个属性。一种方案是JS去请求解析所有的样式表，另一种方案是将touch-action作为html标签的属性。
+ 
+ * **FastClick**
+ 
+    FastClick 是 FT Labs 专门为解决移动端浏览器 300 毫秒点击延迟问题所开发的一个轻量级的库。
+	简而言之，FastClick 在检测到 touchend 事件的时候，会通过 DOM 自定义事件立即触发一个模拟 click 事件，并把浏览器在 300 毫秒之后真正触发的 click 事件阻止掉。
+	
+	FastClick 的使用方法非常简单，在 window load 事件之后，在 <body上调用 
