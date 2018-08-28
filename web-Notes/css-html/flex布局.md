@@ -315,7 +315,7 @@ flex: none |  [<'flex-grow'><'flex-shrink'> ? ||  <'flex-basis'> ]
 
 
 ## 五、flex兼容
-
+![enter description here](./images/1535426807608.png)
 
 
   [1]: http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png
