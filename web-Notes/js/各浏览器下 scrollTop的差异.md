@@ -44,8 +44,5 @@ document.body.scrollTop与document.documentElement.scrollTop两者有个特点�
 
 兼容性写法：
 ```javascript?linenums
-var scroll = window.pageYOffset
-                   || document.documentElement.scrollTop
-                   || document.body.scrollTop
-                   || 0;
+var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 ```
