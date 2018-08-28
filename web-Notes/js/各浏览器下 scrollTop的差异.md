@@ -12,7 +12,7 @@ title: 各浏览器下 scrollTop的差异
    
         document.body.scrollTop 
 		
-	* 有doctype声明
+	* 有doctype（DTD）声明
 	
 	    document.documentElement.scrollTop
 		
@@ -33,11 +33,11 @@ title: 各浏览器下 scrollTop的差异
    * window.pageYOffset
 
 
-   * 没有doctype声明
+   * 没有doctype（DTD）声明
    
         document.body.scrollTop 
 		
-	* 有doctype声明
+	* 有doctype（DTD）声明
 	
 	    document.documentElement.scrollTop
 
