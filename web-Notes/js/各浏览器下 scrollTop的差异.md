@@ -32,6 +32,8 @@ title: 各浏览器下 scrollTop的差异
 
 
 
-## 二、
+## 二、获取scrollTop的值
 
 document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。
+
+可以使用window.pageYoffset
