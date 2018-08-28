@@ -19,3 +19,7 @@ title: 各浏览器下 scrollTop的差异
 ### 2. IE9及以上
      
   可以使用window.pageYOffset或者document.documentElement.scrollTop 
+
+### 3. Safari
+
+ window.pageYOffset 与document.body.scrollTop都可以； 
