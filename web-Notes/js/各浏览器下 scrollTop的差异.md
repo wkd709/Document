@@ -37,3 +37,5 @@ title: 各浏览器下 scrollTop的差异
 document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。
 
 可以使用window.pageYoffset
+
+所有主流浏览器都支持 pageXOffset 和 pageYOffset 属性。
