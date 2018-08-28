@@ -9,6 +9,7 @@ title: 各浏览器下 scrollTop的差异
    * 没有doctype声明
    
         document.body.scrollTop 
+		
 	* 有doctype声明
 	
 	    document.documentElement.scrollTop
