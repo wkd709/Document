@@ -30,7 +30,7 @@ title: 各浏览器下 scrollTop的差异
 
 ### 5. Chrome
 
-window.pageYOffset
+   * window.pageYOffset
 
 
    * 没有doctype声明
