@@ -8,7 +8,7 @@ title: 各浏览器下 scrollTop的差异
 ### 1. IE6/7/8
 
    
-   * 没有doctype声明
+   * 没有doctype（DTD）声明
    
         document.body.scrollTop 
 		
