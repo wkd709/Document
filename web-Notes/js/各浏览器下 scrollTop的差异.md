@@ -14,4 +14,4 @@ title: 各浏览器下 scrollTop的差异
 	* 有doctype声明
 	
 	    document.documentElement.scrollTop
-## 2. IE9及以上
+### 2. IE9及以上
