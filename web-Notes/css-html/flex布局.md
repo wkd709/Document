@@ -314,7 +314,8 @@ flex: none |  [<'flex-grow'><'flex-shrink'> ? ||  <'flex-basis'> ]
 该属性可能取6个值，除了auto,其他都与align-items属性完全一致。
 
 
-## 五、
+## 五、flex兼容
+
 
 
   [1]: http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png
