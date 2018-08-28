@@ -11,7 +11,7 @@ title: JavaScript专题之解读 v8 排序源码
 ## 一、插入排序
 >将第一个元素视为有序序列，遍历数组，将之后的元素依次插入这个构建的有序序列中。
 
-![](./images/insertion_2.gif)
+![](./images/insertion.gif)
 
 ``````javascript?linenums
 function insertionSort(arr) {
