@@ -41,3 +41,11 @@ document.body.scrollTop与document.documentElement.scrollTop两者有个特点�
 所有主流浏览器都支持 pageXOffset 和 pageYOffset 属性。
 
 注意： IE 8 及 更早 IE 版本不支持该属性,但可以使用 "document.documentElement.scrollLeft" 和 "document.documentElement.scrollTop" 属性 。
+
+兼容性写法：
+```javascript?linenums
+var scroll = window.pageYOffset
+                        || document.documentElement.scrollTop
+                        || document.body.scrollTop
+                        || 0;
+```
