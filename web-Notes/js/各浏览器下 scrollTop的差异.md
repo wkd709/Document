@@ -23,3 +23,7 @@ title: 各浏览器下 scrollTop的差异
 ### 3. Safari
 
  window.pageYOffset 与document.body.scrollTop都可以； 
+ 
+### 4. Firefox
+
+火狐等等相对标准些的浏览器就省心多了，直接用window.pageYOffset 或者 document.documentElement.scrollTop 
