@@ -30,6 +30,9 @@ title: 各浏览器下 scrollTop的差异
 
 ### 5. Chrome
 
+window.pageYOffset
+
+
 
 
 ## 二、获取scrollTop的值
