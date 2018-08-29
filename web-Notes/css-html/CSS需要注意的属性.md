@@ -68,4 +68,6 @@ title: CSS需要注意的属性
    
 * **middle**
 
+   单元格垂直居中。
+   
 * **bottom**
