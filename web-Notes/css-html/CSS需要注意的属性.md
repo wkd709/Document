@@ -56,3 +56,5 @@ title: CSS需要注意的属性
    ![enter description here](./images/subandsuper.png "subandsuper")
    
 ### 2. 取值 (对于table-cell元素)
+
+* **baseline **
