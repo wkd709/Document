@@ -48,6 +48,9 @@ title: CSS需要注意的属性
 
     元素基线与父元素的下标基线对齐。
 	
+	![enter description here](./images/subandsuper.png "subandsuper")
 * **super**
 
    元素基线与父元素的上标基线对齐。
+   
+   ![enter description here](./images/subandsuper.png "subandsuper")
