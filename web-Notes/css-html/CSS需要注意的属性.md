@@ -12,6 +12,6 @@ title: CSS需要注意的属性
 
 * **baseline**
 
-   元素基线与父元素的基线对齐。
+   默认值。 元素基线与父元素的基线对齐。
    
    ![baseline](./images/baseline2.png)
