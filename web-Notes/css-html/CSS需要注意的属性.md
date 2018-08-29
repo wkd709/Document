@@ -57,4 +57,5 @@ title: CSS需要注意的属性
    
 ### 2. 取值 (对于table-cell元素)
 
-* **baseline **
+* **baseline**
+
