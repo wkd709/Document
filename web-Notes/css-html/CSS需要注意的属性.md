@@ -54,3 +54,5 @@ title: CSS需要注意的属性
    元素基线与父元素的上标基线对齐。
    
    ![enter description here](./images/subandsuper.png "subandsuper")
+   
+### 2. 取值 (对于table-cell元素)
