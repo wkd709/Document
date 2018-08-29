@@ -31,3 +31,5 @@ title: CSS需要注意的属性
   ![text-bottom](./images/text-botto.png)
  
 * **text-top**
+
+  与text-bottom相反，是text-top，是当前font-size的最高点。您也可以与此对齐。请注意，当前字体Georgia可能有一些比这里所示的更高的上升，因此差距很小。
