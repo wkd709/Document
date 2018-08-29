@@ -25,3 +25,5 @@ title: CSS需要注意的属性
   ![middle](./images/vert-align.png)
   
 * **text-bottom**
+
+  与类型的基线不同，是文本的底部，下降到的地方。图像也可以与此深度对齐：
