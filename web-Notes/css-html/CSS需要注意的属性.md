@@ -19,3 +19,5 @@ title: CSS需要注意的属性
    ![baseline](./images/baseline2.png)
    
 * **middle**
+
+  元素的中心与父元素的基线加上小写x一半的高度值对齐。
