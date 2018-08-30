@@ -164,7 +164,9 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 
  * content area （内容区） 内容区是围绕着文字的一种box，无法显示出来，其高度取决于font-size和padding。
 
-* containing box containing box 是包裹着上述三种box的box，
+* containing box containing box 是包裹着上述三种box的box
+ 
+ ![](./images/2447292392-55baf65e61f73_articlex.png)
  
  **取值**：
  
