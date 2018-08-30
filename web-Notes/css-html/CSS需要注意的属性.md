@@ -100,4 +100,8 @@ title: CSS需要注意的属性
  ![](./images/font-size=0.png "font-size=0")
  
  * img 设置为块级元素
+ 
  * 设置vertical-align的属性值
+
+## 二、font-size
+
