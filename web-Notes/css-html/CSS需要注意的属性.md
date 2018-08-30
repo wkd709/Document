@@ -78,7 +78,7 @@ title: CSS需要注意的属性
 
 ### 3、注意
 
- ### 1、img在严格模式下（DOCTYPE），下面会有几像素的空白。
+ ### img在严格模式下（DOCTYPE），下面会有几像素的空白。
  
  图片文字等inline元素默认是和父级元素的baseline对齐的，即：vertical-align 的默认值是 baseline；而baseline又和父级底边bottom有一定距离；
  
