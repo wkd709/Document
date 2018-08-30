@@ -145,5 +145,9 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
    * **normal**
    
      取决于用户端。桌面浏览器（包括Firefox）使用默认值，约为1.2，这取决于元素的 font-family。
+  
+  * **<数字>**
+
+    
  
       
