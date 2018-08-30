@@ -120,5 +120,7 @@ p { font-size: 100px; }
 .b { font-family: STLiti; }
 .c { font-family: 	KaiTi; }
 ```
+![](./images/font-size.png "font-size")
 
 font-size 相同，font-family 不同，得到的 span 元素的高度也不同。
+
