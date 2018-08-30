@@ -89,3 +89,7 @@ title: CSS需要注意的属性
  ![](./images/img.png "img")
  
  top 和 bottom 之间的值即为 line-height。假如把 line-height 设置为0，那么 baseline 与 bottom 之间的距离也变为0，那道空白也就不见了。
+ 
+ ![](./images/line-height=0.png "line-height=0")
+ 
+ 如果没有设置 line-height，line-height 的默认值是基于 font-size 的，视渲染引擎有所不同，但一般是乘以一个系数（比如1.2）。因此，在没有设置 line-height 的情况下把 font-size 设为0也可以达到同样的效果。当然，这样做的后果就是不能图文混排了。
