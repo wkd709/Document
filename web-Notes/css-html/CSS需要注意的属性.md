@@ -155,7 +155,7 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
  
  **4种box**
  
- 
+ 要说的4种盒子分别是==inline box==、==line box==、==content area==、==containing box==
  
  **取值**：
  
