@@ -105,3 +105,10 @@ title: CSS需要注意的属性
 
 ## 二、font-size
 
+```html?linenums
+<p>
+	<span class="a">Ba</span>
+	<span class="c">Ba</span>
+	<span class="b">Ba</span>
+</p>
+```
