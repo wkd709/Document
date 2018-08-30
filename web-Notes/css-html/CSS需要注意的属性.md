@@ -163,6 +163,8 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
  * line box （行框） 行框是指本行的一个虚拟的矩形框，由该行中行内框组成。行框也是浏览器渲染模式中的一个概念，无法显示出来。行框高度等于本行中所有行内框高度的最大值。当有多行内容时，每一行都有自己的行框。
 
  * content area （内容区） 内容区是围绕着文字的一种box，无法显示出来，其高度取决于font-size和padding。
+
+* containing box containing box 是包裹着上述三种box的box，
  
  **取值**：
  
