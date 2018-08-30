@@ -93,3 +93,5 @@ title: CSS需要注意的属性
  ![](./images/line-height=0.png "line-height=0")
  
  如果没有设置 line-height，line-height 的默认值是基于 font-size 的，视渲染引擎有所不同，但一般是乘以一个系数（比如1.2）。因此，在没有设置 line-height 的情况下把 font-size 设为0也可以达到同样的效果。当然，这样做的后果就是不能图文混排了。
+ 
+ ![](./images/font-size=0.png "font-size=0")
