@@ -139,3 +139,7 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 ## 三、line-height
 
  CSS 属性用于设置多行元素的空间量，比如文本。对于块级元素，它指定元素行盒（line boxes）的最小高度。对于非替代的inline元素，它用于计算行盒（line box）的高度。
+ 
+ **取值**：
+ 
+      
