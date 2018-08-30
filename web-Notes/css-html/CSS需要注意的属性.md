@@ -144,6 +144,8 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
  
   ![](./images/2587037021-55bacfa692fb8_articlex.png)
  
+ 图中两条红线之间的距离就是行高（line-height），上一行的底线和下一行的顶线之间的距离就是行距，而同一行顶线和底线之间的距离是font-size的大小，行距的一半是半行距，半行距、font-size、line-height之间的关系看图片的右下角就一目了然了~
+ 
  **取值**：
  
    * **normal**
