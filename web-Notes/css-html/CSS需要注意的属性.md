@@ -112,3 +112,13 @@ title: CSS需要注意的属性
 	<span class="b">Ba</span>
 </p>
 ```
+
+```css
+p span{ background: #eee;}
+p { font-size: 100px; }
+.a { font-family: Helvetica; }
+.b { font-family: STLiti; }
+.c { font-family: 	KaiTi; }
+```
+
+font-size 相同，font-family 不同，得到的 span 元素的高度也不同。
