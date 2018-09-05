@@ -74,3 +74,5 @@ title: JavaScript 浮点数陷阱及解法
 	> Math.pow(2, 1024)
 	Infinity
    ```
+   
+ ## 二、toPrecision vs toFixed
