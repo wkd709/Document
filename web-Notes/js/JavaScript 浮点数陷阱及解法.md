@@ -82,3 +82,4 @@ title: JavaScript 浮点数陷阱及解法
  
  * toPrecision 是处理精度，精度是从左至右第一个不为0的数开始数起。
  * toFixed 是小数点后指定位数取整，从小数点开始数起。
+
