@@ -97,3 +97,7 @@ title: JavaScript 浮点数陷阱及解法
 
 ### 1、数据展示类
 当你拿到 1.4000000000000001 这样的数据要展示时，建议使用 toPrecision 凑整并 parseFloat 转成数字后再显示，如下：
+
+```js?linenums
+parseFloat(1.4000000000000001.toPrecision(12)) === 1.4  // True
+```
