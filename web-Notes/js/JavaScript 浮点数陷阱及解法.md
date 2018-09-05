@@ -127,3 +127,5 @@ function add(num1, num2) {
   return (num1 * baseNum + num2 * baseNum) / baseNum;
 } 
 ```
+
+以上方法能适用于大部分场景。遇到科学计数法如 2.3e+1（当数字精度大于21时，数字会强制转为科学计数法形式显示）时还需要特别处理一下。
