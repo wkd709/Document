@@ -115,3 +115,15 @@ function strip(num, precision = 12) {
 ### 2、数据运算类
 
 对于运算类操作，如 ==+-*/==，就不能使用 toPrecision 了。正确的做法是把小数转成整数后再运算。以加法为例：
+
+```js?linenums
+/**
+ * 精确加法
+ */
+function add(num1, num2) {
+  const num1Digits = (num1.toString().split('.')[1] || '').length;
+  const num2Digits = (num2.toString().split('.')[1] || '').length;
+  const baseNum = Math.pow(10, Math.max(num1Digits, num2Digits));
+  return (num1 * baseNum + num2 * baseNum) / baseNum;
+} 
+```
