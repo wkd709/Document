@@ -106,7 +106,7 @@ parseFloat(1.4000000000000001.toPrecision(12)) === 1.4  // True
 
 ```js?linenums
 function strip(num, precision = 12) {
-  return +parseFloat(num.toPrecision(precision));
+  return parseFloat(num.toPrecision(precision));
 }
 ```
 
