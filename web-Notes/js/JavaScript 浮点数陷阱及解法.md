@@ -133,7 +133,7 @@ function add(num1, num2) {
 3、保留2位小数的方法
 
 ```js
-function(num) {
+function toDecimal2(num) {
     var f = parseFloat(num);
     if (isNaN(f)) {
         return false;
