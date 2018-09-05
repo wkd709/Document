@@ -129,3 +129,25 @@ function add(num1, num2) {
 ```
 
 以上方法能适用于大部分场景。遇到科学计数法如 2.3e+1（当数字精度大于21时，数字会强制转为科学计数法形式显示）时还需要特别处理一下。
+
+3、保留2位小数的方法
+
+```js
+function(num) {
+    var f = parseFloat(num);
+    if (isNaN(f)) {
+        return false;
+    }
+    var f = (Math.round(num * 100) / 100).toFixed(2);
+    var s = f.toString();
+    var rs = s.indexOf('.');
+    if (rs < 0) {
+        rs = s.length;
+        s += '.';
+    }
+    while (s.length <= rs + 2) {
+        s += '0';
+    }
+    return s;
+}
+```
