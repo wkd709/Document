@@ -109,3 +109,5 @@ function strip(num, precision = 12) {
   return +parseFloat(num.toPrecision(precision));
 }
 ```
+
+为什么选择 12 做为默认精度？这是一个经验的选择，一般选12就能解决掉大部分0001和0009问题，而且大部分情况下也够用了，如果你需要更精确可以调高。
