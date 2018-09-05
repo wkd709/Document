@@ -101,3 +101,5 @@ title: JavaScript 浮点数陷阱及解法
 ```js?linenums
 parseFloat(1.4000000000000001.toPrecision(12)) === 1.4  // True
 ```
+
+封装成方法就是：
