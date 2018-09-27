@@ -1,5 +1,5 @@
 ---
-title: Tool.Js
+title: Tool.js
 ---
 
 ## 一、追加当前目录下的css到页面上
