@@ -63,3 +63,66 @@ exports.getDate = function(val, fmt) {
     return fmt;
 };
 ```
+
+## 三、根据长度截取先使用字符串，超长部分追加…
+
+```js?linenums
+/**参数说明：
+ * 根据长度截取先使用字符串，超长部分追加…
+ * str 对象字符串
+ * len 目标字节长度
+ * 返回值： 处理结果字符串
+ */
+exports.cutString = function(str, len) {
+    if (!str) {
+       return '';
+    }
+    str = str.replace(/&nbsp;|&lt;|p&gt;|\//g,'').replace(/\s/g,"");
+    if(str.length*2 <= len) {
+        return str;
+    }
+    var strlen = 0;
+    var s = "";
+    for(var i = 0;i < str.length; i++) {
+        s = s + str.charAt(i);
+        if (str.charCodeAt(i) > 128) {
+            strlen = strlen + 2;
+            if(strlen >= len){
+                return s.substring(0,s.length-1) + "...";
+            }
+        } else {
+            strlen = strlen + 1;
+            if(strlen >= len){
+                return s.substring(0,s.length-2) + "...";
+            }
+        }
+    }
+    return s;
+}
+```
+
+## 四、保留2位小数
+
+```js?linenums
+/**
+ * 保留两位小数的方法
+ * @param {*} num 传入的数字
+ **/
+exports.toDecimal2 = function(num) {
+    var f = parseFloat(num);
+    if (isNaN(f)) {
+        return false;
+    }
+    var f = (Math.round(num * 100) / 100).toFixed(2);
+    var s = f.toString();
+    var rs = s.indexOf('.');
+    if (rs < 0) {
+        rs = s.length;
+        s += '.';
+    }
+    while (s.length <= rs + 2) {
+        s += '0';
+    }
+    return s;
+}
+```
