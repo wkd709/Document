@@ -126,3 +126,55 @@ exports.toDecimal2 = function(num) {
     return s;
 }
 ```
+
+## 五、获取一周的时间
+
+```js?linenums
+// 获取一周的日期
+exports.getWeek = function(datevalue) {
+    var week = [];
+    var weekName = [
+        {num:0,name: '星期一'},
+        {num:1,name: '星期二'},
+        {num:2,name: '星期三'},
+        {num:3,name: '星期四'},
+        {num:4,name: '星期五'},
+        {num:5,name: '星期六'},
+        {num:6,name: '星期天'},
+    ];
+    var index = 0;
+    for (var i = -3 ; i < 4; i++) {
+        if(datevalue) {
+            var stamp = new Date(datevalue);
+        } else {
+            var stamp = new Date();
+        }
+        stamp.setDate(stamp.getDate() + i);
+        
+        week[index] = {
+            date: stamp.getFullYear() +'-',
+        };
+        
+        if(stamp.getMonth() < 9 && stamp.getMonth() >= 0) {
+            week[index].date = week[index].date+'0'+(stamp.getMonth()+1)+'-';
+        } else {
+            week[index].date = week[index].date+(stamp.getMonth()+1)+'-';
+        }
+        
+        if(stamp.getDate() < 10 && stamp.getDate() > 0) {
+            week[index].date = week[index].date+'0'+stamp.getDate();
+        } else {
+            week[index].date = week[index].date+stamp.getDate();
+        }
+        
+        weekName.forEach(function (item) {
+            if(item.num == stamp.getDay()) {
+                week[index].weekDate = item.name;
+            }
+        })
+        index++;
+    }
+    return week;
+}
+
+```
