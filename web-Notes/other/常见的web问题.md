@@ -1,7 +1,7 @@
 ---
 title: 常见的web问题
 ---
- # .note {
+.note {
    padding: 10px 0 ;
     padding-left: 30px;
     background: #fff3d4;
