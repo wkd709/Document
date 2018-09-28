@@ -43,3 +43,12 @@ title: 常见的web问题
 
 **伪元素** （pseudo-elements）
 
+就像 pseudo classes (伪类)一样， 伪元素添加到选择器，但不是描述特殊状态，它们允许您为元素的某些部分设置样式。 下例中的 ::first-line  伪元素改变段落第一行的文字样式。
+
+```css?linenums
+/* The first line of every <p> element. */
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+```
