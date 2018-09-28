@@ -66,7 +66,7 @@ exports.getDate = function(val, fmt) {
 
 ## 三、根据长度截取先使用字符串，超长部分追加…
 
-```js?linenums
+```js
 /**参数说明：
  * 根据长度截取先使用字符串，超长部分追加…
  * str 对象字符串
