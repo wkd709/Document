@@ -34,7 +34,7 @@ title: ToolJs
 
 ## 二、时间格式转换
 
-```js?linenums
+```js
 /**
  * 时间转换
  * fmt  例如：yyyy-MM-dd hh:mm:ss
