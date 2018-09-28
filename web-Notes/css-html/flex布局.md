@@ -36,7 +36,7 @@ Flex是Flexible Box 的缩写，意为'弹性布局'，用来为盒状模型提�
 
 行内元素也可以使用Flex布局。
 
-```css?linenums
+```css
 .box {
     display: inline-flex;
 }
