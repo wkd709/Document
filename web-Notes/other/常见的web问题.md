@@ -1,6 +1,7 @@
 ---
 title: 常见的web问题
 ---
+<style>
 .note {
    padding: 10px 0 ;
     padding-left: 30px;
@@ -15,6 +16,8 @@ blockquote {
     padding: 10px;
     
 }
+</style>
+
 ## 一、说说 cookies，sessionStorage 、 localStorage 你对它们的理解？
 
 * cookie是网站为了表示用户身份而存储在用户本地终端上的数据（通常经过加密），cookie数据始终在同源的http请求中携带，也会在浏览器与服务器间来回传递。
