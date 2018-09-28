@@ -6,7 +6,7 @@ title: ToolJs
 
 例如：
 
-```js?linenums
+```js
 !function(){
   var cropperObj = {
     version: '1.4.1',
