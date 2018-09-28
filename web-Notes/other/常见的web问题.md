@@ -1,22 +1,6 @@
 ---
 title: 常见的web问题
 ---
-<style>
-.note {
-   padding: 10px 0 ;
-    padding-left: 30px;
-    background: #fff3d4;
-    border-color: #f6b73c;
-    border-left-width: 5px;
-    border-left-style: solid;
-}
-blockquote {
-    background: #eee;
-    border-left: 5px solid #3d7e9a;
-    padding: 10px;
-    
-}
-</style>
 
 ## 一、说说 cookies，sessionStorage 、 localStorage 你对它们的理解？
 
