@@ -129,7 +129,7 @@ exports.toDecimal2 = function(num) {
 
 ## 五、获取一周的时间
 
-```js?linenums
+```js
 // 获取一周的日期
 exports.getWeek = function(datevalue) {
     var week = [];
