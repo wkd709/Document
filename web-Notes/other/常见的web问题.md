@@ -38,3 +38,24 @@ title: 常见的web问题
 <div class='note'>
 注意： 与伪类相反，pseudo-elements 可被用于为一个元素的 特定部分 应用样式。
 </div>
+
+* {
+  font-family: -apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Arial,sans-serif;
+    color: #333;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.5px;
+}
+.note {
+   padding: 10px 0 ;
+    padding-left: 30px;
+    background: #fff3d4;
+    border-color: #f6b73c;
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+blockquote {
+    background: #eee;
+    border-left: 5px solid #3d7e9a;
+    padding: 10px;
+    
+}
