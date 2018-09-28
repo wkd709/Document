@@ -103,7 +103,7 @@ exports.cutString = function(str, len) {
 
 ## 四、保留2位小数
 
-```js?linenums
+```js
 /**
  * 保留两位小数的方法
  * @param {*} num 传入的数字
