@@ -1,26 +1,7 @@
 ---
 title: 常见的web问题
 ---
-* {
-  font-family: -apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Arial,sans-serif;
-    color: #333;
-    text-rendering: optimizeLegibility;
-    letter-spacing: 0.5px;
-}
-.note {
-   padding: 10px 0 ;
-    padding-left: 30px;
-    background: #fff3d4;
-    border-color: #f6b73c;
-    border-left-width: 5px;
-    border-left-style: solid;
-}
-blockquote {
-    background: #eee;
-    border-left: 5px solid #3d7e9a;
-    padding: 10px;
-    
-}
+
 ## 一、说说 cookies，sessionStorage 、 localStorage 你对它们的理解？
 
 * cookie是网站为了表示用户身份而存储在用户本地终端上的数据（通常经过加密），cookie数据始终在同源的http请求中携带，也会在浏览器与服务器间来回传递。
