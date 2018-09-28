@@ -52,3 +52,7 @@ p::first-line {
   text-transform: uppercase;
 }
 ```
+
+**注意**：与伪元素比较，pseudo-classes 能够用来改变基于状态的元素样式。
+
+![](./images/1538113996412.png)
