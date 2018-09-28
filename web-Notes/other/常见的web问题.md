@@ -63,3 +63,113 @@ p::first-line {
 ![](./images/1538114595635.png)
 
 ![](./images/1538114612398.png)
+
+
+## 四、Chrome、Safari等浏览器，当表单提交用户选择记住密码后，下次自动填充表单的背景变成黄色，影响了视觉体验是否可以修改？
+
+```css
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: #fff;//设置成元素原本的颜色
+  background-image: none;
+  color: rgb(0, 0, 0);
+}
+```
+
+## 五、js有哪些基本数据类型？
+
+   ECMAScript 标准定义有7种数据类型： 
+   
+   *  Boolean 
+   *  Null
+   *  Number
+   *  String
+   *  Symbol （ECMAScript 6 新定义 ，Symbol 生成一个全局唯一、表示独一无二的值）
+   *  Object ( Array、Function、Object )
+
+## 六、js的 for 跟for in 循环它们之间的区别？
+
+* 遍历数组时的异同： for循环 数组下标的typeof类型:number, for in 循环数组下标的typeof类型:string
+
+```js
+var southSu = ['苏南','深圳','18','男'];
+for(var i=0;i<southSu.length;i++){
+	console.log(typeof i); //number
+	console.log(southSu[i]);// 苏南 , 深圳 , 18 , 男
+}
+var arr = ['苏南','深圳','18','男','帅气'];
+for(var k in arr){
+	console.log(typeof k);//string
+	console.log(arr[k]);// 苏南 , 深圳 , 18 , 男 , 帅气
+}
+```
+
+* 遍历对象时的异同：for循环 无法用于循环对象，获取不到obj.length; for in 循环遍历对象的属性时，原型链上的所有属性都将被访问，解决方案：使用hasOwnProperty方法过滤或Object.keys会返回自身可枚举属性组成的数组 
+
+```js?linenums
+Object.prototype.test = '原型链上的属性';
+var southSu = {name:'苏南',address:'深圳',age:18,sex:'男',height:176};
+for(var i=0;i<southSu.length;i++){
+	console.log(typeof i); //空
+	console.log(southSu[i]);//空
+}
+
+
+for(var k in southSu){
+	console.log(typeof k);//string
+	console.log(southSu[k]);// 苏南 , 深圳 , 18 , 男 , 176 , 原型链上的属性
+}
+```
+
+## 七、js把一串字符串去重(能统计出字符重复次数更佳)，列出你的思路（两种以上）：
+
+```js?linenums
+<script>
+	let str = "12qwe345671dsfa233dsf9876ds243dsaljhkjfzxcxzvdsf";
+	let array = str.split("");
+
+	//方案一：//
+	array = [...new Set(array)].join("");
+	array = ((a)=>[...new Set(a)])(array).join("");
+	console.log(array);//12qwe34567dsfa98ljhkzxcv  只能过滤，不会统计
+
+	//方案二：
+	function unique (arr) {
+		const seen = new Map()
+		return (arr.filter((a) => !seen.has(a) && seen.set(a, 1))).join("");
+	}
+	console.log(unique(array)) // 12qwe34567dsfa98ljhkzxcv
+
+	//方案三：
+	function unique (arr) {
+		let arrs=[];
+		var news_arr = arr.sort();//排序能减少一次循环
+		for(var i=0;i<news_arr.length;i++){
+				if(news_arr[i] == news_arr[i+1] && news_arr[i]!= news_arr[i-1] ){
+						arrs.push(arr[i]);
+				};
+ 
+		};
+		return arrs.join("");
+	}
+	console.log(unique(array)) // 12qwe34567dsfa98ljhkzxcv
+
+	//方案四：
+	function unique (arr) {
+		let obj={};
+		for(var i=0;i<arr.length;i++){
+			let key = arr[i];
+			if(!obj[key] ){
+					obj[key]=1;
+			}else{
+				obj[key]+=1;
+			}
+ 
+		};
+		return obj;
+	}
+	console.log(unique(array)) // object 对应每个key以及它重复的次数 
+
+</script>
+```
+
+## 八、
