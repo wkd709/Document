@@ -44,7 +44,7 @@ Flex是Flexible Box 的缩写，意为'弹性布局'，用来为盒状模型提�
 
 webkit内核的浏览器，必须加上   ==-webkit-== 前缀。
 
-```css?linenums
+```css
 .box {
     display: -webkit-flex; /* Safari */
 	display: flex;
