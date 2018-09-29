@@ -82,3 +82,4 @@ function GetChildCount () {
 ```
 ## 五、children 
 
+是一个只读属性，返回 一个Node的子elements ，是一个动态更新的 **HTMLCollection**。
