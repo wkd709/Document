@@ -53,6 +53,7 @@ document.onreadystatechange = function () {
 例如： 
 
 ```js?linenums
+//兼容性写法
 function GetChildCount () {
 	var container = document.getElementById ("container");
 
