@@ -34,3 +34,9 @@ document.onreadystatechange = function () {
 **浏览器兼容性**
 
 ![](./images/1538190508333.png)
+
+## 三、 document.characterSet
+
+只读属性返回当前文档的字符编码。该字符编码是用于渲染此文档的字符集，可能与该页面指定的编码不同
+
+例如： 返回当前文档的字符集,比如"ISO-8859-1" 或者 "UTF-8"
