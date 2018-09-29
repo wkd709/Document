@@ -17,8 +17,8 @@ title: ToolJs
             e = t[n].src;
             break;
           }
-          return e || t[i].src;
         }
+        return e || t[i].src;
       }();
       return e.substring(0, e.lastIndexOf("/") + 1);
     }
