@@ -26,3 +26,8 @@ document.onreadystatechange = function () {
   }
 }
 ```
+
+## 二、 document.currentScript
+
+返回其所包含的脚本中正在被执行的 ==< script >== 元素.
+
