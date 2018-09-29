@@ -41,7 +41,9 @@ document.onreadystatechange = function () {
 
 例如： 返回当前文档的字符集,比如"ISO-8859-1" 或者 "UTF-8"
 
-## 四、childElementCount
+## 四、ParentNode
+### 1、属性
+#### 1）、ParentNode.childElementCount
 
 只读属性返回一个无符号长整型数字，表示给定元素的子元素数。
 
@@ -80,11 +82,11 @@ function GetChildCount () {
 	alert ("The number of child elements is " + childCount);
 }
 ```
-## 五、children 
+#### 2）、children 
 
 是一个只读属性，返回 一个Node的子elements ，是一个动态更新的 **HTMLCollection**。
 
-## 六、firstElementChild 
+#### 3）、firstElementChild 
 
  只读属性，返回对象的第一个孩子 Element, 如果没有子元素，则为null。
  
@@ -116,3 +118,40 @@ function GetChildCount () {
     }
 })(window.Node || window.Element);
  ```
+ 
+#### 4）、lastElementChild  
+ 只读属性返回对象的最后一个孩子Element ，如果没有子元素，则返回null。
+ 
+ ### 2、方法
+ 
+ #### 1）、append() 和 appendChild()
+ 
+在 ParentNode的最后一个子节点之后插入一组 Node 对象或 DOMString 对象。
+被插入的 DOMString 对象等价为 Text 节点。
+
+parentNode.append()是还在试用期的方法，，有兼容问题。
+
+ 与parentNode.appendChild()的区别在于：
+* ParentNode.append()允许追加DOMString对象，而 Node.appendChild() 只接受 Node 对象。
+* ParentNode.append() 没有返回值，而 Node.appendChild() 返回追加的 Node 对象.
+* ParentNode.append() 可以追加几个节点和字符串，而 Node.appendChild() 只能追加一个节点。
+
+注意：DOMString 是一个UTF-16字符串。由于JavaScript已经使用了这样的字符串，所以DOMString 直接映射到 一个String。
+
+#### 2）、prepend()
+
+可以在父节点的第一个子节点之前插入一系列Node对象或者DOMString对象。DOMstring会被当作Text节点对待。
+
+ParentNode.prepend是还在试用期的方法，，有兼容问题。
+
+#### 3）、querySelectorAll()
+
+返回一个 NodeList 表示元素的列表，把当前的元素作为根与指定的选择器组相匹配。
+
+##### （1）、**NodeList** 
+NodeList 对象是一个节点的集合，是由**Node.childNodes** 和  **document.querySelectorAll** 返回的。
+
+属性：length, NodeList 对象中包含的节点个数。
+方法：item返回NodeList对象中指定索引的节点，如果索引越界，则返回null。可以用for遍历集合
+转数组的话 ： Array.from(NodeList)
+ ## 五、
