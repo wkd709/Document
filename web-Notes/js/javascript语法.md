@@ -1,5 +1,5 @@
 ---
-title: javascript语法
+title: javascript API语法
 ---
 
 ## 一、readyState
