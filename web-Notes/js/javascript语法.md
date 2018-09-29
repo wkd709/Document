@@ -6,6 +6,8 @@ title: javascript语法
 
 一个==docment==的Document.readyState属性描述了文档的加载状态。
 
+可以判断 docment 、js 、css等是否加载完成
+
 **redayState**有以下几个值：
 * **loading** / 加载中
 * **interactive**  / 互动
