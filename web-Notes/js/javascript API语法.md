@@ -151,6 +151,7 @@ ParentNode.prepend是还在试用期的方法，，有兼容问题。
 **浏览器兼容性**
 ![](./images/1538199526390.png)
 [1] Internet Explorer 8 只支持 CSS2 选择器。
+
 ##### （1）、**NodeList** 
 NodeList 对象是一个节点的集合，是由**Node.childNodes** 和  **document.querySelectorAll** 返回的。
 
