@@ -31,3 +31,6 @@ document.onreadystatechange = function () {
 
 返回其所包含的脚本中正在被执行的 ==< script >== 元素.
 
+**浏览器兼容性**
+
+![](./images/1538190508333.png)
