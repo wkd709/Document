@@ -83,3 +83,7 @@ function GetChildCount () {
 ## 五、children 
 
 是一个只读属性，返回 一个Node的子elements ，是一个动态更新的 **HTMLCollection**。
+
+## 六、firstElementChild 
+
+ 只读属性，返回对象的第一个孩子 Element, 如果没有子元素，则为null。
