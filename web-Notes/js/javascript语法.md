@@ -45,6 +45,11 @@ document.onreadystatechange = function () {
 
 只读属性返回一个无符号长整型数字，表示给定元素的子元素数。
 
+**浏览器兼容性**
+
+![](./images/1538191912638.png)
+
+
 例如： 
 
 ```js?linenums
