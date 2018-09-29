@@ -87,3 +87,7 @@ function GetChildCount () {
 ## 六、firstElementChild 
 
  只读属性，返回对象的第一个孩子 Element, 如果没有子元素，则为null。
+ 
+ **兼容性**
+ 
+ ![](./images/1538192399130.png)
