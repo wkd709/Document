@@ -148,6 +148,8 @@ ParentNode.prepend是还在试用期的方法，，有兼容问题。
 
 返回一个 NodeList 表示元素的列表，把当前的元素作为根与指定的选择器组相匹配。
 
+**浏览器兼容性**
+![](./images/1538199526390.png)
 ##### （1）、**NodeList** 
 NodeList 对象是一个节点的集合，是由**Node.childNodes** 和  **document.querySelectorAll** 返回的。
 
