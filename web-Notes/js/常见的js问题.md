@@ -192,6 +192,28 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 >9、若 Type(x) 为 Object 且 Type(y) 为 String 或 Number， 返回比较 ToPrimitive(x) == y 的结果。
 >10、返回 false。
 
+
+### 4、对象转换为原始值的步骤
+所有对象都继承了两个转换方法:toString()和valueOf。
+
+**toString()** 的作用是返回这个对象的字符串。
+
+```js 
+console.log(({x:0,y:1}).toString());//输出"[object object]"
+console.log([1,2,3].toString());//输出1,2,3
+console.log((function(x){f(x);}).toString());//输出"function(x){f(x);}"
+console.log(new Date(2017,1,14).toString());//输出Tue Feb 14 2017 00:00:00 GMT+0800 (中国标准时间)
+var pattern=/\d+/g;
+console.log(pattern.toString());///\d+/g
+```
+
+**valueOf()** 方法的任务并未详细定义:如果存在任意的原始值,它就默认将对象转换为它的原始值。
+
+对象时复合值而且大多数对象无法真正表示一个原始值,因此默认valueOf()方法简单地返回对象本身,而不是返回一个原始值。
+
+**数组、函数、正则** 表达式都继承了这个默认方法,调用这些类型实例的valueOf()方法只是返回对象本身。
+
+**日期类** 对象的valueOf()方法一个它的内部表示,从1970年1月1日以来总的毫秒数。
 ## 二、数值转换
 
 >有三个函数可以把非数字转换为数值： **Number()** 和 **parseInt()** 和 **parseFloat()**。
@@ -243,3 +265,27 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 * 如果值为toString()方法，则调用该方法（没有参数）并返回相应的结果。
 * 如果值为null，则返回 null;
 * 如果值为undefined，则返回undefined。
+
+## 四、原始值 (primitive values)
+
+>除 Object 以外的所有类型都是不可变的（值本身无法被改变）。例如，与 C 语言不同，JavaScript 中字符串是不可变的（译注：如，JavaScript 中对字符串的操作一定返回了一个新字符串，原始字符串并没有被改变）。我们称这些类型的值为“原始值”。
+
+### 1、 布尔类型
+
+表示一个逻辑实体，可以有两个值：true 和 false。
+
+### 2、Null 类型
+
+只有一个值，null 
+
+### 3、Undefined类型
+
+一个没有被赋值的变量会有个默认的值 undefined。
+
+### 4、数字类型
+
+根据 ECMAScript 标准，JavaScript 中只有一种数字类型：基于 IEEE 754 标准的双精度 64 位二进制格式的值（-(263 -1) 到 263 -1）。）。它并没有为整数给出一种特定的类型。除了能够表示浮点数外，还有一些带符号的值：+Infinity，-Infinity 和 NaN (非数值，Not-a-Number)。你可以使用常量 Number.MAX_VALUE 和 Number.MIN_VALUE。
+
+### 5、字符串类型
+
+JavaScript的字符串类型用于表示文本数据。它是一组16位的无符号整数值的“元素”。在字符串中的每个元素占据了字符串的位置。第一个元素的索引为0，下一个是索引1，依此类推。字符串的长度是它的元素的数量。
