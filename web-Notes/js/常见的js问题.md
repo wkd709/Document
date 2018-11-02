@@ -141,3 +141,58 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 
 #### 2.3、通过ToString将值转换为字符串
 ![](./images/1541136420102.png)
+
+例子：
+
+```js
+({} + {}) = ?
+两个对象的值进行+运算符，肯定要先进行隐式转换为原始类型才能进行计算。
+1、进行ToPrimitive转换，由于没有指定PreferredType类型，{}会使默认值为Number，进行ToPrimitive(input, Number)运算。
+2、所以会执行valueOf方法，({}).valueOf(),返回的还是{}对象，不是原始值。
+3、继续执行toString方法，({}).toString(),返回"[object Object]"，是原始值。
+故得到最终的结果，"[object Object]" + "[object Object]" = "[object Object][object Object]"
+```
+
+```js?linenums
+2 * {} = ?
+1、首先*运算符只能对number类型进行运算，故第一步就是对{}进行ToNumber类型转换。
+2、由于{}是对象类型，故先进行原始类型转换，ToPrimitive(input, Number)运算。
+3、所以会执行valueOf方法，({}).valueOf(),返回的还是{}对象，不是原始值。
+4、继续执行toString方法，({}).toString(),返回"[object Object]"，是原始值。
+5、转换为原始值后再进行ToNumber运算，"[object Object]"就转换为NaN。
+故最终的结果为 2 * NaN = NaN
+```
+
+### 3、== 运算符隐式转换
+
+== 运算符的规则规律性不是那么强，按照下面流程来执行,es5文档
+
+>比较运算 x==y, 其中 x 和 y 是值，返回 true 或者 false。这样的比较按如下方式进行：
+>1、若 Type(x) 与 Type(y) 相同， 则
+> * 1* 若 Type(x) 为 Undefined， 返回 true。
+> * 2* 若 Type(x) 为 Null， 返回 true。
+> * 3* 若 Type(x) 为 Number， 则
+        (1)、若 x 为 NaN， 返回 false。
+        (2)、若 y 为 NaN， 返回 false。
+        (3)、若 x 与 y 为相等数值， 返回 true。
+        (4)、若 x 为 +0 且 y 为 −0， 返回 true。
+        (5)、若 x 为 −0 且 y 为 +0， 返回 true。
+        (6)、返回 false。
+> *  4* 若 Type(x) 为 String, 则当 x 和 y 为完全相同的字符序列（长度相等且相同字符在相同位置）时返回 true。 否则， 返回 false。
+> *  5* 若 Type(x) 为 Boolean, 当 x 和 y 为同为 true 或者同为 false 时返回 true。 否则， 返回 false。
+> *  6*  当 x 和 y 为引用同一对象时返回 true。否则，返回 false。
+> 
+>2、若 x 为 null 且 y 为 undefined， 返回 true。
+>3、若 x 为 undefined 且 y 为 null， 返回 true。
+>4、若 Type(x) 为 Number 且 Type(y) 为 String，返回比较 x == ToNumber(y) 的结果。
+>5、若 Type(x) 为 String 且 Type(y) 为 Number，返回比较 ToNumber(x) == y 的结果。
+>6、若 Type(x) 为 Boolean， 返回比较 ToNumber(x) == y 的结果。
+>7、若 Type(y) 为 Boolean， 返回比较 x == ToNumber(y) 的结果。
+>8、若 Type(x) 为 String 或 Number，且 Type(y) 为 Object，返回比较 x == ToPrimitive(y) 的结果。
+>9、若 Type(x) 为 Object 且 Type(y) 为 String 或 Number， 返回比较 ToPrimitive(x) == y 的结果。
+>10、返回 false。
+
+作者：keenjaan
+链接：https://juejin.im/post/5a7172d9f265da3e3245cbca
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
