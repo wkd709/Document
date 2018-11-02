@@ -214,6 +214,7 @@ console.log(pattern.toString());///\d+/g
 **数组、函数、正则** 表达式都继承了这个默认方法,调用这些类型实例的valueOf()方法只是返回对象本身。
 
 **日期类** 对象的valueOf()方法一个它的内部表示,从1970年1月1日以来总的毫秒数。
+
 ```js?linenums
 console.log(({x:0,y:1}).valueOf());//输出Object {x: 0, y: 1}
 
@@ -257,7 +258,9 @@ console.log(b.valueOf());//输出true
 * 3、否则,对象尝试去调用toString()方法,返回一个原始值,则JavaScript返回这个值。 
 * 4、如果无法从valueOf()和toString()获得一个原始值,此时就会抛出一个类型错误。
 
+注意
 
+![](./images/1541145113548.png)
 ## 二、数值转换
 
 >有三个函数可以把非数字转换为数值： **Number()** 和 **parseInt()** 和 **parseFloat()**。
