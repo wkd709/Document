@@ -214,6 +214,50 @@ console.log(pattern.toString());///\d+/g
 **数组、函数、正则** 表达式都继承了这个默认方法,调用这些类型实例的valueOf()方法只是返回对象本身。
 
 **日期类** 对象的valueOf()方法一个它的内部表示,从1970年1月1日以来总的毫秒数。
+```js?linenums
+console.log(({x:0,y:1}).valueOf());//输出Object {x: 0, y: 1}
+
+console.log([1,2,3].valueOf());//输出 [1, 2, 3]
+
+console.log((function(x){f(x);}).valueOf());//输出function (x){f(x);}
+
+var d=new Date(2017,1,14);
+console.log(d.valueOf());//1487001600000
+
+var n=new Number(1); 
+console.log(n.valueOf());//输出1
+
+var b=new Boolean(false);
+console.log(b.valueOf());//输出false
+
+var str=new String("str");
+console.log(str.valueOf());//输出str
+
+```
+
+**需要注意的特殊转换:**
+
+```js?linenums
+var n=new Number("a"); 
+console.log(n.valueOf());//NaN
+
+var b=new Boolean("str");
+console.log(b.valueOf());//输出true
+```
+
+**总的而言,** 在JavaScript中 **对象到字符串的转换** 经过如下步骤: 
+
+* 1、如果对象具有toString()方法,则调用这个方法。如果返回一个原始值,JavaScript将这个值转换字符串,并返回这个字符串的结果。 
+* 2、如果对象没有toString()方法或者这个方法并不是返回一个原始值,那么JavaScript会调用valueOf()方法。如果存在这个方法,JavaScript调用它。如果返回值是原始值,将这个值转换为字符串,然后返回。
+* 3、如果无法从toString()和valueOf()获得一个原始值,此时就会抛出一个类型错误。
+
+**在对象到数字的转换过程中**：
+* 1、它首先尝试调用valueOf()方法。 
+* 2、如果对象具有valueOf()方法,并返回一个原始值,则JavaScript将这个原始值转换为数字,并返回这个数字。 
+* 3、否则,对象尝试去调用toString()方法,返回一个原始值,则JavaScript返回这个值。 
+* 4、如果无法从valueOf()和toString()获得一个原始值,此时就会抛出一个类型错误。
+
+
 ## 二、数值转换
 
 >有三个函数可以把非数字转换为数值： **Number()** 和 **parseInt()** 和 **parseFloat()**。
