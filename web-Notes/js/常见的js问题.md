@@ -191,8 +191,3 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 >8、若 Type(x) 为 String 或 Number，且 Type(y) 为 Object，返回比较 x == ToPrimitive(y) 的结果。
 >9、若 Type(x) 为 Object 且 Type(y) 为 String 或 Number， 返回比较 ToPrimitive(x) == y 的结果。
 >10、返回 false。
-
-作者：keenjaan
-链接：https://juejin.im/post/5a7172d9f265da3e3245cbca
-来源：掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
