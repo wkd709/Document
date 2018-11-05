@@ -77,7 +77,15 @@ exports.cutString = function(str, len) {
     if (!str) {
        return '';
     }
-    str = str.replace(/&nbsp;|&lt;|p&gt;|\//g,'').replace(/\s/g,"");
+
+    if (len) {//截取长度时，去掉标签字符
+        //去除标签字符
+        str = str.replace(/(<|&lt;)\/?.+?(>|&gt;)/g,"").replace(/ /g,"");
+    } else {//完整html时
+        //字符转为html标签
+        var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+        str =  str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+    }
     if(str.length*2 <= len) {
         return str;
     }
@@ -98,7 +106,7 @@ exports.cutString = function(str, len) {
         }
     }
     return s;
-}
+};
 ```
 
 ## 四、保留2位小数
