@@ -84,7 +84,7 @@ exports.cutString = function(str, len) {
     } else {//完整html时
         //字符转为html标签
         var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
-        str =  str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+        str = str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
     }
     if(str.length*2 <= len) {
         return str;
