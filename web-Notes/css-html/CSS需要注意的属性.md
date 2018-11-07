@@ -206,8 +206,8 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
         align-items: center;
     }
     img {
-        width: 50px;
         height: 50px;
     }
 </style>
 ```
+### 2、
