@@ -397,3 +397,38 @@ console.log(foo);// 2
 >函数声明提升会在编译阶段把声明和函数体整体都提前到执行环境顶部，所以我们可以在函数声明之前调用这个函数
 >函数表达式，其实就是变量声明的一种，声明操作会被提升到执行环境顶部，并赋值undefined。赋值操作被留在原地等到执行
 
+```js?linenums
+a();//This is a function body  函数声明提升
+
+function a() {
+    console.log('This is a function body');
+}
+```
+
+#### 1.函数声明提升优于变量声明提升
+
+```js?linenums
+a();// 1
+
+var a;
+function a() {
+    console.log(1);
+}
+a = function() {
+    console.log(2);
+}
+
+a();//2
+
+//相当于 
+
+function a() {
+    console.log(1);
+}
+a();
+a = function() {
+    console.log(2);
+}
+a();
+
+```
