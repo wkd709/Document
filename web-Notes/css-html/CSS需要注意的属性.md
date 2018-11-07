@@ -211,3 +211,28 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 </style>
 ```
 ### 2、定位 （img宽高固定 ，父元素宽高大于img宽高）
+
+```css
+<style type="text/css">
+    *{margin: 0;padding:0;}
+    div{
+        width:150px;
+        height: 100px;
+        position: relative;
+        border:1px solid #000;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+</style>
+```
+
+### 3、不知道元素的宽高 (或者控制高度 或者宽度缩放显示)
+
