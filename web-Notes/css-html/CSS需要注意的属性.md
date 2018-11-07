@@ -189,3 +189,25 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 	  与元素自身的字体大小有关。计算值是给定的百分比值乘以元素计算出的字体大小。百分比值可能会带来不确定的结果。
 	  
 ### 1、
+
+## 四、图片居中的方式
+
+### 1、弹性布局flex
+
+```css
+<style type="text/css">
+    *{margin: 0;padding:0;}
+    div{
+        width:150px;
+        height: 100px;
+        border:1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+</style>
+```
