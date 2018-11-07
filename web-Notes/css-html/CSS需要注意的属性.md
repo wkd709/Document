@@ -306,3 +306,23 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
     }
 </style>
 ```
+
+### 4、display table-cell, 然后水平居中设置text-align为center，垂直居中设置vertical-align为middle
+
+```css
+<style type="text/css">
+    *{margin: 0;padding: 0;}
+    div{
+        width:150px;
+        height: 100px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        border:1px solid #000;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+</style>
+```
