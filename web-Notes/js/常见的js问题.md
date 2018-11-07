@@ -367,5 +367,16 @@ function foo() {
    console.log(a); //10
 }
 foo();
+```
 
+```js?linenums
+var foo = 2;
+function foo() {
+   console.log(a); //undefined
+   var a = 10;
+   console.log(a); //10
+}
+console.log(foo);// 2
+
+//注意：函数的提升会先于变量。
 ```
