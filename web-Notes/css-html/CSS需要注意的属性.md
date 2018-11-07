@@ -275,3 +275,26 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
     }
 </style>
 ```
+
+### 3、定位 ，img宽高固定 图片的中心位于div的中心，就需要将图片向上移动图片高度的一半，并向左移动图片宽度的一半。
+
+```css
+<style type="text/css">
+    *{margin: 0;padding:0;}
+    div{
+        width:150px;
+        height: 100px;
+        position: relative;
+        border:1px solid #000;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px; /* 高度的一半 */
+        margin-left: -25px; /* 宽度的一半 */
+    }
+</style>
+```
