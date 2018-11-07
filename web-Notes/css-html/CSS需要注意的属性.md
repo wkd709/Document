@@ -236,3 +236,42 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 
 ### 3、不知道元素的宽高 (或者控制高度 或者宽度缩放显示)
 
+**宽高固定**
+```css
+<style type="text/css">
+    *{margin: 0;padding:0;}
+    div{
+        width:150px;
+        height: 100px;
+        position: relative;
+        border:1px solid #000;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
+```
+
+**宽不固定 高固定 按高缩放，水平居中**
+```css
+<style type="text/css">
+    *{margin: 0;padding:0;}
+    div{
+        width:150px;
+        height: 100px;
+        position: relative;
+        border:1px solid #000;
+    }
+    img {
+        height: 50px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+</style>
+```
