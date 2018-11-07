@@ -379,4 +379,17 @@ function foo() {
 console.log(foo);// 2
 
 //注意：函数的提升会先于变量。
+
+//相当于
+
+function foo() {
+   console.log(a); //undefined
+   var a = 10;
+   console.log(a); //10
+}
+var foo = 2; //最开始 foo 是函数 ，之后foo被覆盖
+console.log(foo);// 2
 ```
+
+### 2、函数声明
+
