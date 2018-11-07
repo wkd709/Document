@@ -432,3 +432,21 @@ a = function() {
 a();
 
 ```
+
+var a ; 属于重复声明，被忽略掉了。然而后续的函数声明还是会覆盖之前的函数声明。如下：
+
+```js?linenums
+a();//3
+
+var a;
+function a() {
+    console.log(1);
+}
+a = function() {
+    console.log(2);
+}
+function a() {
+    console.log(3);
+}
+a();//2
+```
