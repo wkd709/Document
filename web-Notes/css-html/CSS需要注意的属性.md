@@ -193,7 +193,7 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 ## 四、图片居中的方式
 
 ### 1、弹性布局flex
-
+> img 高度固定，img宽度自适应 ，图片等高缩小，水平居中
 ```css
 <style type="text/css">
     *{margin: 0;padding:0;}
@@ -210,4 +210,4 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
     }
 </style>
 ```
-### 2、
+### 2、定位 （img宽高固定 ，父元素宽高大于img宽高）
