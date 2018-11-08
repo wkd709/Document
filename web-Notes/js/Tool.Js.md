@@ -186,3 +186,37 @@ exports.getWeek = function(datevalue) {
 }
 
 ```
+
+六、判断类型
+
+Object.prototype.toString.call();
+
+```js?linenums
+var a = 1;
+Object.prototype.toString.call(a);
+//"[object Number]"
+var a = function() {};
+Object.prototype.toString.call(a);
+//"[object Function]"
+var a = 'dd';
+Object.prototype.toString.call(a);
+//"[object String]"
+var a = null;
+Object.prototype.toString.call(a);
+//"[object Null]"
+var a = undefined;
+Object.prototype.toString.call(a);
+//"[object Undefined]"
+var a = [1,1];
+Object.prototype.toString.call(a);
+//"[object Array]"
+var a = {};
+Object.prototype.toString.call(a);
+//"[object Object]"
+//var a = /$s/;
+Object.prototype.toString.call(a);
+//"[object RegExp]"
+var a = new Date();
+Object.prototype.toString.call(a);
+//"[object Date]"
+```
