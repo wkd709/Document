@@ -6,7 +6,12 @@ title: Object
 ## 1. Object.length
 值为1
 
-## 2. Object.prototype
+
+
+
+## 2. Object.prototype (原型对象 prototype)
+Javascript中所有的对象都是Object的实例，并继承Object.prototype的属性和方法，有些属性是隐藏的。
+
 
 该Object.prototype属性表示Object原型对象
 
