@@ -219,4 +219,13 @@ Object.prototype.toString.call(a);
 var a = new Date();
 Object.prototype.toString.call(a);
 //"[object Date]"
+
+//判断json
+var a = '{"name":"dd"}';
+if (typeof str == 'string') {
+   var obj=JSON.parse(a);
+   if (Object.prototype.toString.call(obj).split(' ') == 'Object') {
+        return true;//json
+  }
+}
 ```
