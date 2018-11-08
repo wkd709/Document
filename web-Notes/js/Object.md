@@ -82,9 +82,9 @@ console.log(Ann.Age()); //14-28
 console.log(Ann.Sex); //female
 ```
 对上述代码，我们可以进行如下分析：
-var Younger = function() {}===>：Younger.__ proto__=Person.prototype,
-Younger.prototype = new Person()===>:Younger.prototype.__ proto__ = Person.prototype,
-var Ann = new Younger()===>Ann.__ proto__=Younger.prototype,
+var Younger = function() {} === >：Younger.__ proto__=Person.prototype,
+Younger.prototype = new Person()=== >:Younger.prototype.__ proto__ = Person.prototype,
+var Ann = new Younger()=== >Ann.__ proto__=Younger.prototype,
 综上可得：
 Ann.__ proto__.__ proto__ = Person.prototype
 
