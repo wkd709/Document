@@ -93,3 +93,43 @@ Ann本身没有Name()方法，于是从Ann.__ proto__(Younger.prototype)中找,�
 对于Ann.Sex,在Ann.__ proto__(Younger.prototype)中已经能够找到，便不再向上寻找，因此输出是female。
 
 ## 4、构造函数 （constructor）
+
+多数情况下，此属性用于定义一个构造函数，并使用new和继承原型链进一步调用它。
+
+所有对象都会从它的原型上继承一个 constructor 属性：
+
+```js?linenums
+var o = {};
+o.constructor === Object; // true
+
+var o = new Object;
+o.constructor === Object; // true
+
+var a = [];
+a.constructor === Array; // true
+
+var a = new Array;
+a.constructor === Array // true
+
+var n = new Number(3);
+n.constructor === Number; // true
+```
+
+## 5、方法
+
+### 1、Object.assign() 浅拷贝
+
+用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+
+```js?linenums
+const object1 = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+const object2 = Object.assign({c: 4, d: 5}, object1);
+
+console.log(object2.c, object2.d);
+// expected output: 3 5
+```
