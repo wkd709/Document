@@ -117,7 +117,7 @@ n.constructor === Number; // true
 
 ## 5、方法
 
-### 1、Object.assign() 浅拷贝
+### 5.1、Object.assign() 浅拷贝 拷贝的是属性值
 
 用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
 
@@ -133,3 +133,42 @@ const object2 = Object.assign({c: 4, d: 5}, object1);
 console.log(object2.c, object2.d);
 // expected output: 3 5
 ```
+
+### 5.2、Object.create() 
+
+创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。 
+
+**语法**
+
+Object.create(proto, [propertiesObject])
+
+**参数**
+
+proto ： 新创建对象的原型对象。
+
+propertiesObject： 可选。如果没有指定为 undefined，则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称。这些属性对应Object.defineProperties()的第二个参数。
+
+**返回值**
+
+一个新对象，带着指定的原型对象和属性。
+
+### 5.3、Object.defineProperties()
+
+直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
+
+#### 5.3.1、语法
+
+**Object.defineProperties(obj, props)**
+
+__参数__
+
+**obj** 在其上定义或修改属性的对象。
+
+**props**：
+
+要定义其可枚举属性或修改的属性描述符的对象。对象中存在的属性描述符主要有两种：数据描述符和访问器描述符（更多详情，请参阅Object.defineProperty()）。描述符具有以下键：
+
+* **configurable**， true 当且仅当该属性描述符的类型可以被改变并且该属性可以从对应对象中删除。默认为 false
+* **enumerable**，true 当且仅当在枚举相应对象上的属性时该属性显现。默认为 false
+* **value**，与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。默认为 undefined.
+* **writable**，true当且仅当与该属性相关联的值可以改变时。默认为 false
