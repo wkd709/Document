@@ -232,3 +232,40 @@ descriptor： 将被定义或修改的属性描述符。
 * **set**，一个给属性提供 setter 的方法，如果没有 setter 则为 undefined。当属性值修改时，触发执行该方法。该方法将接受唯一参数，即该属性新的参数值。默认为 undefined。
 
 ![](./images/1541665037356.png)
+
+```js?linenums
+// 使用 __proto__
+var obj = {};
+var descriptor = Object.create(null); // 没有继承的属性
+// 默认没有 enumerable，没有 configurable，没有 writable
+descriptor.value = 'static';
+Object.defineProperty(obj, 'key', descriptor);
+
+// 显式
+Object.defineProperty(obj, "key", {
+  enumerable: false,
+  configurable: false,
+  writable: false,
+  value: "static"
+});
+
+// 循环使用同一对象
+function withValue(value) {
+  var d = withValue.d || (
+    withValue.d = {
+      enumerable: false,
+      writable: false,
+      configurable: false,
+      value: null
+    }
+  );
+  d.value = value;
+  return d;
+}
+// ... 并且 ...
+Object.defineProperty(obj, "key", withValue("static"));
+
+// 如果 freeze 可用, 防止代码添加或删除对象原型的属性
+// （value, get, set, enumerable, writable, configurable）
+(Object.freeze||Object)(Object.prototype);
+```
