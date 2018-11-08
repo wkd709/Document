@@ -39,3 +39,9 @@ JavaScript中的几乎所有对象都是**Object**; 典型对象继承属性（�
 
 那么__proto__是什么？每个对象都会在其内部初始化一个属性，就是__proto__。
 普通对象中的__proto__是什么呢？ Object的本质函数对象，是通过new Function()创建，所以Object.__ proto __ 指向Function.prototype。同理，Function也是函数对象，因此Function.__ proto__ 同样指向Function.prototype。 Object.prototype对象也有__proto__属性，但它比较特殊，为null。这个由__proto__串起来的直到Object.prototype.__ proto__为null的链就是原型链。
+
+```js?linenums
+console.log(Object.__proto__ === Function.prototype);//true
+console.log(Function.__proto__===Function.prototype);//true
+console.log(Object.prototype.__proto__);//null
+```
