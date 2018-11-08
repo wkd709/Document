@@ -91,3 +91,5 @@ Ann.__ proto__.__ proto__ = Person.prototype
 Ann本身没有Name()方法，于是从Ann.__ proto__(Younger.prototype)中找,仍没有找到于是在向上一层Ann.__ proto__.__ proto__(Person.prototype)中寻找，最终在Person.prototype中找到对应的方法并调用。
 同理，Ann本身并没有Age()方法，但在Ann.__ proto__(Younger.prototype)存在。
 对于Ann.Sex,在Ann.__ proto__(Younger.prototype)中已经能够找到，便不再向上寻找，因此输出是female。
+
+## 4、构造函数 （constructor）
