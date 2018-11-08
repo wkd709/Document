@@ -310,3 +310,7 @@ Object.defineProperty(o, "conflict", {
 });
 // throws a TypeError: value appears only in data descriptors, get appears only in accessor descriptors
 ```
+
+### 5.5、Object.entries()
+
+返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环也枚举原型链中的属性）。
