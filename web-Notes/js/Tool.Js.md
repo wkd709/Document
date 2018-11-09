@@ -77,31 +77,34 @@ exports.cutString = function(str, len) {
     if (!str) {
        return '';
     }
-
     if (len) {//截取长度时，去掉标签字符
         //去除标签字符
-        str = str.replace(/(<|&lt;)\/?.+?(>|&gt;)/g,"").replace(/ /g,"");
+        str = str.replace(/(<|&lt;)\/?.+?(>|&gt;)/g,"")
+            .replace(/(&nbsp;|nbsp;|&amp;|amp;|&quot;|quot;)/ig,"")
+            .replace(/ /g,"");
     } else {//完整html时
         //字符转为html标签
         var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
-        str = str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+        str =  str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
     }
-    if(str.length*2 <= len) {
+
+    if (str.length * 2 <= len) {
         return str;
     }
+
     var strlen = 0;
     var s = "";
-    for(var i = 0;i < str.length; i++) {
+    for (var i = 0; i < str.length; i++) {
         s = s + str.charAt(i);
         if (str.charCodeAt(i) > 128) {
             strlen = strlen + 2;
-            if(strlen >= len){
-                return s.substring(0,s.length-1) + "...";
+            if (strlen >= len) {
+                return s.substring(0, s.length - 1) + "...";
             }
         } else {
             strlen = strlen + 1;
-            if(strlen >= len){
-                return s.substring(0,s.length-2) + "...";
+            if (strlen >= len) {
+                return s.substring(0, s.length - 2) + "...";
             }
         }
     }
@@ -219,6 +222,10 @@ Object.prototype.toString.call(a);
 var a = new Date();
 Object.prototype.toString.call(a);
 //"[object Date]"
+var a = true;
+Object.prototype.toString.call(a);
+//"[object Boolean]"
+
 
 //判断json
 var a = '{"name":"dd"}';
