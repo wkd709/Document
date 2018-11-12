@@ -236,3 +236,10 @@ if (typeof str == 'string') {
   }
 }
 ```
+
+```js?linenums
+function getClass (a) {
+  const str = Object.prototype.toString.call(a)
+  return /^\[object (.*)\]$/.exec(str)[1]
+}
+```
