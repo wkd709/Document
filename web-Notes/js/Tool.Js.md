@@ -342,3 +342,13 @@ function leftOpen(n,m) {
 
 **随机生成 0、1 这两个整数**
 
+Math.round(Math.random())
+
+```js?linenums
+var random1 = Math.round(Math.random());
+var random2 = Math.round(Math.random());
+var random3 = Math.round(Math.random());
+console.log(random1);
+console.log(random2);
+console.log(random3);
+```
