@@ -355,3 +355,64 @@ console.log(random3);
 
 **生成 [ 0, n ) 范围内的随机整数（大于等于0，小于n）**
 
+// 0 到 n-1 
+Math.floor(Math.random()*n)
+
+```js?linenums
+var random1 = Math.floor(Math.random()*5);
+var random2 = Math.floor(Math.random()*5);
+var random3 = Math.floor(Math.random()*5);
+console.log(random1);
+console.log(random2);
+console.log(random3);
+```
+
+**生成 [ 1, n ] 范围内的随机整数（大于等于1，小于等于n）**
+
+// 1 到 n 的随机整数
+Math.floor(Math.random()*n)+1
+
+```js?linenums
+// 1 到 5 的随机整数（包括 1 和 5）。
+var random1 = Math.floor(Math.random()*5)+1;
+var random2 = Math.floor(Math.random()*5)+1;
+var random3 = Math.floor(Math.random()*5)+1;
+console.log(random1);
+console.log(random2);
+console.log(random3);
+```
+
+**生成 [ min, max ] 范围内的随机整数（大于等于min，小于等于max）**
+
+//生成一个最小值为 min，最大值为 max 的随机整数。
+Math.floor(Math.random()*(max-min+1))+min
+
+```js?linenums
+//生成几个 5 到 10 的随机整数
+var random1 = Math.floor(Math.random()*(10-5+1))+5;
+var random2 = Math.floor(Math.random()*(10-5+1))+5;
+var random3 = Math.floor(Math.random()*(10-5+1))+5;
+console.log(random1);
+console.log(random2);
+console.log(random3);
+```
+
+### 7.3、随机字符串的生成
+
+#### 7.3.1、生成指定位数的纯数字字符串
+
+```js?linenums
+//生成n位数字字符串
+function randomNum(n){
+  var res = "";
+  for(var i=0;i<n;i++){
+    res += Math.floor(Math.random()*10);
+  }
+  return res;
+}
+ 
+//测试
+console.log(randomNum(3))
+console.log(randomNum(5))
+console.log(randomNum(7))
+```
