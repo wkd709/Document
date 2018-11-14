@@ -329,3 +329,9 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 
 ## 五、display
 
+用于规定元素生成的框类型，影响显示方式
+
+值: none | inline | block | inline-block | list-item | run-in | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-colume-group | table-column | table-cell | table-caption | inherit
+
+[注意]：IE7-浏览器不支持table类属性值及inherit
+
