@@ -352,3 +352,6 @@ console.log(random1);
 console.log(random2);
 console.log(random3);
 ```
+
+**生成 [ 0, n ) 范围内的随机整数（大于等于0，小于n）**
+
