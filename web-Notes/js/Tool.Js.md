@@ -385,7 +385,10 @@ console.log(random3);
 **生成 [ min, max ] 范围内的随机整数（大于等于min，小于等于max）**
 
 //生成一个最小值为 min，最大值为 max 的随机整数。
-Math.floor(Math.random()*(max-min+1))+min
+
+Math.floor(Math.random()*(max-min+1))+min;
+
+parseInt(Math.random()*(max-min+1)+min,10);
 
 ```js?linenums
 //生成几个 5 到 10 的随机整数
