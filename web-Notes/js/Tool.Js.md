@@ -281,3 +281,56 @@ if(!fls.f) {
     }
 }
 ```
+
+## 七、生成随机数的方法汇总
+
+### 7.1、随机浮点数的生成
+
+####  7.1.1）、生成 [ 0, 1 ) 范围内的随机数（大于等于0，小于1）
+
+使用 random() 方法可以返回一个介于 0 ~ 1 之间的伪随机数（包括 0，不包括 1）,  **Math.random()**
+
+####  7.1.2）、生成 [ n, m ) 范围内的随机数（大于等于n，小于m）,**Math.random()*(m-n)+n**
+
+
+```js?linenums
+//下面生成 [10,15) 范围内的随机浮点数。
+var random1 = Math.random()*(15-10)+10;
+var random2 = Math.random()*(15-10)+10;
+var random3 = Math.random()*(15-10)+10;
+console.log(random1);
+console.log(random2);
+console.log(random3);
+```
+
+####  7.1.3）、生成 [n,m]、(n,m)、(n,m] 范围内的随机数
+
+```js?linenums
+//取得[n,m]范围随机数
+function fullClose(n,m) {
+   var result = Math.random()*(m+1-n)+n;
+   while(result>m) {
+       result = Math.random()*(m+1-n)+n;
+   }
+   return result;
+}
+
+ 
+//取得(n,m)范围随机数
+function fullOpen(n,m) {
+   var result = Math.random()*(m-n)+n;
+   while(result == n) {
+       result = Math.random()*(m-n)+n;
+   }
+   return result;
+}
+ 
+//取得(n,m]范围随机数
+function leftOpen(n,m) {
+   var result = Math.random()*(m-n+1)+n-1;
+   while(result<n) {
+       result = Math.random()*(m-n+1)+n-1;
+   }
+   return result;
+}
+```
