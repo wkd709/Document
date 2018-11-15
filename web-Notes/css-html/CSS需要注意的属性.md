@@ -331,7 +331,7 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 
 用于规定元素生成的框类型，影响显示方式
 
-值: none | inline | block | inline-block | list-item | run-in | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-colume-group | table-column | table-cell | table-caption | inherit | box
+值: none | inline | block | inline-block | list-item | run-in | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-colume-group | table-column | table-cell | table-caption | inherit
 
 [注意]：IE7-浏览器不支持table类属性值及inherit
 
@@ -392,6 +392,3 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 * flex-basis: 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
 * flex: 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
 * align-self: 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
-
-### 5.5、display: box
-
