@@ -408,7 +408,7 @@ scroll：元素的内容会在元素框的边界处剪裁，但浏览器会显�
 hidden：元素的内容会在元素框的边界处剪裁，并且超出剪裁区域的内容不可见。
 
 
-## 七、transform
+## 七、transform以及常见的一些问题
 
 ### 7.1 transform限制position:fixed的跟随效果
 
