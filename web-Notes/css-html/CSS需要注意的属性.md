@@ -392,3 +392,24 @@ font-size 相同，font-family 不同，得到的 span 元素的高度也不同�
 * flex-basis: 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
 * flex: 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
 * align-self: 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+
+## 六、overflow
+
+visible | hidden | scroll | auto | inherit
+
+
+overflow-x：对水平方向内容溢出的剪切。
+overflow-y：定义对垂直方向内容溢出的剪切。
+
+
+visible：元素的内容在元素框之外也可见。
+auto：如果内容被剪裁，则浏览器会显示滚动条以便查看其余的内容。
+scroll：元素的内容会在元素框的边界处剪裁，但浏览器会显示滚动条以便查看其余的内容
+hidden：元素的内容会在元素框的边界处剪裁，并且超出剪裁区域的内容不可见。
+
+
+## 七、transform
+
+
+
+## 八、border
