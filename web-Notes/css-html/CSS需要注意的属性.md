@@ -410,6 +410,22 @@ hidden：元素的内容会在元素框的边界处剪裁，并且超出剪裁�
 
 ## 七、transform
 
+### 7.1 transform限制position:fixed的跟随效果
+
+position:fixed 可以让元素不跟随浏览器的滚动条滚动，而且这种跟随连它的兄弟们 position:relative/absolute 都限制不了。
+
+position:fixed遇到 transform就被限制了，会相当于降级变成为position:absolute。
+
+### 7.2 transform改变overflow对absolute元素的限制
+
+absolute 绝对定位元素，如果含有overflow不为visible的父级元素，同时，该父级元素以及该元素绝对定位元素之间任何嵌套元素都没position为非static属性的声明，则overflow对该absolute元素不起作用。
+
+```html?linenums
+<p style="width:96px; height:96px; border:2px solid #beceeb; overflow:hidden;">
+    <img src="mm1.jpg"style="position:absolute;" />
+</p>
+```
+.![](./images/1542869176847.png)
 
 
 ## 八、border
