@@ -439,7 +439,7 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 .container img {  position: absolute; height: 191px; width: 100%; }
 </style>
 <div class="container">
-    <img src="mm1.jpg" />
+    <img src="mm1.jpg"/>
 </div>
 ```
 .![](./images/1542870886006.png)
