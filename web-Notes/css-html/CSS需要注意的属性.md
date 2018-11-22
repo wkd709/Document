@@ -433,6 +433,10 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 ### 7.3 transform限制absolute的100%宽度大小
 
 ```html?linenums
+<style>
+.container { width: 191px; height: 191px; border: 2px solid #beceeb; }
+.container img {  position: absolute; height: 191px; width: 100%; }
+</style>
 <div class="container">
     <img src="mm1.jpg" />
 </div>
