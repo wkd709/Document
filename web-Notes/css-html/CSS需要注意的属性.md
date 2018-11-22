@@ -417,6 +417,7 @@ position:fixed 可以让元素不跟随浏览器的滚动条滚动，而且这�
 position:fixed遇到 transform就被限制了，会相当于降级变成为position:absolute。
 
 ### 7.2 transform改变overflow对absolute元素的限制
+
 #### 7.2.1 父级overflow;hidden,子元素 position:absolute，则overflow失效。
 absolute 绝对定位元素，如果含有overflow不为visible的父级元素，同时，该父级元素以及该元素绝对定位元素之间任何嵌套元素都没position为非static属性的声明，则overflow对该absolute元素不起作用。
 
@@ -426,6 +427,11 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 </p>
 ```
 .![](./images/1542869176847.png)
+
+#### 7.2.2 
+
+### 7.3 transform限制absolute的100%宽度大小
+
 
 
 ## 八、border
