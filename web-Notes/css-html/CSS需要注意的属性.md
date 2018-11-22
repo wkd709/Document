@@ -432,6 +432,7 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 
 ### 7.3 transform限制absolute的100%宽度大小
 
+#### 7.3.1 position:absolute 并且width:100%，此元素相对于 static 定位以外的第一个父元素进行定位和width百分比。
 ```html?linenums
 <style>
 .container { width: 191px; height: 191px; border: 2px solid #beceeb; }
@@ -440,7 +441,7 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 <div class="container">
     <img src="mm1.jpg" />
 </div>
-
 ```
+.![](./images/1542870886006.png)
 
 ## 八、border
