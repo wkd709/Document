@@ -476,7 +476,7 @@ btn.click(function () {
   ### 6.3 解决办法
   
   ```js
-  var btn = $('#btn');
+var btn = $('#btn');
 btn.click(function () {
     //打开一个不被拦截的新窗口
     var newWindow = window.open();
