@@ -442,7 +442,7 @@ console.log(generateMixed(5))
 console.log(generateMixed(7))
 ```
 
-## 八、去除空格的方法目前共有12种
+## 八、去除空格的方法
 
 ### 8.1 String.prototype.trim = function() {    return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');  }  去掉前后空格
 
