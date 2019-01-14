@@ -472,5 +472,7 @@ btn.click(function () {
         }
     })
 });
+
+//用户没有直接出发window.open，而是发出一个ajax请求，window.open方法被放在了ajax的回调函数里，这样的情况是会被拦截的
 ```
   
