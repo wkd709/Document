@@ -447,3 +447,5 @@ console.log(generateMixed(7))
 ### 8.1 String.prototype.trim = function() {    return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');  }  去掉前后空格
 
 ### 8.2  String.prototype.trim = function() {    return this.replace(/^\s+/, '').replace(/\s+$/, '');  } 去掉前后空格
+
+### 8.3 String.prototype.trim = function() {    return  this.replace(/^\s+|\s+$/g, '');  } 去掉前后空格
