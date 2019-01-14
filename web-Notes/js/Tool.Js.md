@@ -441,3 +441,6 @@ console.log(generateMixed(3))
 console.log(generateMixed(5))
 console.log(generateMixed(7))
 ```
+
+## 八、去除空格的方法目前共有12种
+
