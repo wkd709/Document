@@ -442,14 +442,16 @@ console.log(generateMixed(5))
 console.log(generateMixed(7))
 ```
 
-## 八、去除空格的方法
+## 八、去除空格的方法（去掉前后空格）
 
-### 8.1 String.prototype.trim = function() {    return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');  }  去掉前后空格
+### 8.1 String.prototype.trim = function() {    return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');  } 
 
-### 8.2  String.prototype.trim = function() {    return this.replace(/^\s+/, '').replace(/\s+$/, '');  } 去掉前后空格
+### 8.2  String.prototype.trim = function() {    return this.replace(/^\s+/, '').replace(/\s+$/, '');  }
 
-### 8.3 String.prototype.trim = function() {    return  this.replace(/^\s+|\s+$/g, '');  } 去掉前后空格
+### 8.3 String.prototype.trim = function() {    return  this.replace(/^\s+|\s+$/g, '');  }
 
-### 8.4 String.prototype.trim = function() {    var str = this;    str = str.match(/\S+(?:\s+\S+)*/);    return str ? str[0] : '';  }  去掉前后空格
+### 8.4 String.prototype.trim = function() {    var str = this;    str = str.match(/\S+(?:\s+\S+)*/);    return str ? str[0] : '';  }
 
-### 8.5 String.prototype.trim = function() {    return this.replace(/^\s*(\S*(\s+\S+)*)\s*$/, '$1');  } 去掉前后空格
+### 8.5 String.prototype.trim = function() {    return this.replace(/^\s*(\S*(\s+\S+)*)\s*$/, '$1');  }
+
+### 8.6 String.prototype.trim = function() {    return this.replace(/^\s*(\S*(?:\s+\S+)*)\s*$/, '$1');  }
