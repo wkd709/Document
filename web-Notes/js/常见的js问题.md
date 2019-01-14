@@ -489,3 +489,26 @@ btn.click(function () {
     })
 });
   ```
+  
+  **优化**
+  
+  ```js
+  var btn = $('#btn');
+btn.click(function () {
+
+    //打开一个不被拦截的新窗口
+　　var adPopup = window.open('about:blank', '_blank','width='+window.screen.width+',height='+window.screen.height+', ...');
+    $.ajax({
+        url: 'ooxx',
+　　　　 type:'post',
+　　　　 dataType:'json',
+        success: function (url) {
+            //修改新窗口的url
+　　　　　　　adPopup.blur();
+　　　　　　　adPopup.opener.focus();
+　　　　　　　adPopup.location = url;
+
+        }
+    })
+});
+  ```
