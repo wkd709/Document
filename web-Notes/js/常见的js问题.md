@@ -457,5 +457,20 @@ a();//2
  	当浏览器检测到非用户操作产生的新弹出窗口，则会对其进行阻止。因为浏览器认为这不是用户希望看到的页面。
  	在chrome的安全机制里面，非用户触发的window.open方法，是会被拦截的。
 	
+### 6.2 会被拦截的情况
 
+#### 6.2.1 
+
+```js?linenums
+var btn = $('#btn');
+btn.click(function () {
+    $.ajax({
+        url: 'ooxx',
+        success: function (url) {
+            //会被拦截
+            window.open(url);
+        }
+    })
+});
+```
   
