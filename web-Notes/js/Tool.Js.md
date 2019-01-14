@@ -452,3 +452,4 @@ console.log(generateMixed(7))
 
 ### 8.4 String.prototype.trim = function() {    var str = this;    str = str.match(/\S+(?:\s+\S+)*/);    return str ? str[0] : '';  }  去掉前后空格
 
+### 8.5 String.prototype.trim = function() {    return this.replace(/^\s*(\S*(\s+\S+)*)\s*$/, '$1');  } 去掉前后空格
