@@ -499,13 +499,13 @@ btn.click(function () {
 　var adPopup = window.open('about:blank', '_blank','width='+window.screen.width+',height='+window.screen.height+', ...');
     $.ajax({
         url: 'ooxx',
-　　　　 type:'post',
-　　　　 dataType:'json',
+		type:'post',
+		dataType:'json',
         success: function (url) {
             //修改新窗口的url
-　　　　　　　adPopup.blur();
-　　　　　　　adPopup.opener.focus();
-　　　　　　　adPopup.location = url;
+		   adPopup.blur();
+		   adPopup.opener.focus();
+		   adPopup.location = url;
 
         }
     })
