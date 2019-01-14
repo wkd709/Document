@@ -474,3 +474,18 @@ btn.click(function () {
 //用户没有直接出发window.open，而是发出一个ajax请求，window.open方法被放在了ajax的回调函数里，这样的情况是会被拦截的
 ```
   ### 6.3 解决办法
+  
+  ```js
+  var btn = $('#btn');
+btn.click(function () {
+    //打开一个不被拦截的新窗口
+    var newWindow = window.open();
+    $.ajax({
+        url: 'ooxx',
+        success: function (url) {
+            //修改新窗口的url
+            newWindow.location.href = url;
+        }
+    })
+});
+  ```
