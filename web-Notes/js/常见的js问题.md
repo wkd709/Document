@@ -493,7 +493,7 @@ btn.click(function () {
   **优化**
   
   ```js
-  var btn = $('#btn');
+var btn = $('#btn');
 btn.click(function () {
     //打开一个不被拦截的新窗口
 　var adPopup = window.open('about:blank', '_blank','width='+window.screen.width+',height='+window.screen.height+', ...');
