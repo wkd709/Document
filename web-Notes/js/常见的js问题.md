@@ -506,7 +506,6 @@ btn.click(function () {
 		   adPopup.blur();
 		   adPopup.opener.focus();
 		   adPopup.location = url;
-
         }
     })
 });
