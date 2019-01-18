@@ -182,8 +182,8 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 > *  5* 若 Type(x) 为 Boolean, 当 x 和 y 为同为 true 或者同为 false 时返回 true。 否则， 返回 false。
 > *  6*  当 x 和 y 为引用同一对象时返回 true。否则，返回 false。
 > 
->2、若 x 为 null 且 y 为 undefined， 返回 true。
->3、若 x 为 undefined 且 y 为 null， 返回 true。
+>2、若 x 为 null 且 y 为 undefined，返回 true。
+>3、若 x 为 undefined 且 y 为 null，返回 true。
 >4、若 Type(x) 为 Number 且 Type(y) 为 String，返回比较 x == ToNumber(y) 的结果。
 >5、若 Type(x) 为 String 且 Type(y) 为 Number，返回比较 ToNumber(x) == y 的结果。
 >6、若 Type(x) 为 Boolean， 返回比较 ToNumber(x) == y 的结果。
