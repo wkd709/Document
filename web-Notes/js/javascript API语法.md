@@ -161,3 +161,17 @@ NodeList 对象是一个节点的集合，是由**Node.childNodes** 和  **docum
  ## 五、hasOwnProperty 
  
  判断属性是否存在
+ 
+ ```js
+ o = new Object();
+o.prop = 'exists';
+
+function changeO() {
+  o.newprop = o.prop;
+  delete o.prop;
+}
+
+o.hasOwnProperty('prop');   // 返回 true
+changeO();
+o.hasOwnProperty('prop');   // 返回 false
+ ```
