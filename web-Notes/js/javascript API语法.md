@@ -159,3 +159,5 @@ NodeList 对象是一个节点的集合，是由**Node.childNodes** 和  **docum
 方法：item返回NodeList对象中指定索引的节点，如果索引越界，则返回null。可以用for遍历集合
 转数组的话 ： Array.from(NodeList)
  ## 五、hasOwnProperty 
+ 
+ 判断属性是否存在
