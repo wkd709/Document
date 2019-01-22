@@ -827,3 +827,65 @@ Fn();   // undefined
 
 Fn.call(obj);   // green
 ```
+
+call可以实现对函数的立即调用，并且改变函数内部的this指向。上面的例子中，直接调用函数Fn的时候，它内部的this指向window对象，因此打印的是undefined；当通过call指定函数内部的this指向obj的时候，它就能获取到obj上的属性和方法了。call调用还能实现调用时候的传参，请看。
+
+```js?linenums
+let obj = {
+    color: 'blue'
+}
+
+function Fn(height, width) {
+    console.log(`the tree is ${this.color}, and the tall is ${height}, width is ${width}`);
+}
+
+Fn.call(obj, 20, 3);   // the tree is blue, and the tall is 20, width is 3
+```
+
+#### 7.8.2 apply
+
+apply的作用和call是一模一样的，都是实现对函数内部this的改变，唯一的区别就是传参的方式不一样：call是通过一个一个参数的方式传递参数，而apply是通过数组的形式传递多个参数。
+
+```js?linenums
+let obj = {
+    color: 'orange'
+}
+
+function Fn(height, width) {
+    console.log(`the tree is ${this.color}, and the tall is ${height}, width is ${width}`);
+}
+
+Fn.apply(obj, [16, 7]);   // the tree is orange, and the tall is 16, width is 7
+```
+
+#### 7.8.3 bind
+
+call和apply都是实现对函数的立即调用，并且改变函数内部this的指向，如果说我只想改变函数内部的this，而不执行函数，该怎么办？这个时候，就需要用到bind。
+
+```js?linenums
+let person = {
+    name: 'jack'
+}
+
+function Person() {
+    console.log(this.name);
+}
+
+let p1 = Person.bind(person);
+p1();   // 'jack'
+```
+
+当一个函数执行完bind方法后，会返回一个新的函数，而这个新的函数跟原函数相比，内部的this指向被显示的改变了。但是不会立即执行新的函数，而是在你需要的时候才去调用。
+但是有一点需要注意，返回的新函数p1，它内部的this就无法再改变了。接着上面的例子。
+
+```js?linenums
+let animal = {
+    name: 'animal'
+}
+
+let p2 = p1.bind();
+p2();   // 'jack'
+```
+
+p2的this依然是指向obj,而非animal。
+
