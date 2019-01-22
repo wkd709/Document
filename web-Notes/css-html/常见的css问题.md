@@ -22,7 +22,7 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
     <img src="mm1.jpg"style="position:absolute;" />
 </p>
 ```
-.![](./images/1542869176847.png)
+![](./images/1548142191106.png)
 
 
 ### 1.2transform限制absolute的100%宽度大小
