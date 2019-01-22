@@ -37,7 +37,7 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
     <img src="mm1.jpg"/>
 </div>
 ```
-![](./images/1542870886006.png)
+![](./images/1548142176063.png)
 
 #### 1.2.2 position:absolute 并且width:100%，父级 transform: scale(1);，不管设不设置position: relative;子元素的宽度会以父级的width为百分比
 
