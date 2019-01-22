@@ -543,10 +543,26 @@ btn.click(function () {
 let o = {
     name: 'abc',
     fn: function() {
-        console.log( this.a );
+        console.log( this.name);
     }
 }
 
 let fn2 = o.fn;
 fn2();  // undefined
+```
+
+是的，虽然fn2拿到的是对象o里面的一个方法，但是，万变不离其宗，在执行fn2()的时候，仍然是没有前缀的，那是谁在调用fn2的？当然是window对象。所以这里的this也指向window。
+
+#### 7.1.1 严格模式和非严格模式的区别
+
+全局对象window调用的函数，内部的this就是指向window，但是有些问题需要注意。严格模式和非严格模式区别（‘use strict’）。在这个情况下，this的指向是有区别的。
+
+非严格模式下如上已经说过了，而严格模式下的全局调用，this指向的是undefined。
+
+```js?linenums
+'use strict'
+function fn1() {
+   console.log(this);
+}
+fn1();//undefined
 ```
