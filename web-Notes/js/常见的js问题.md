@@ -795,3 +795,14 @@ function Person() {
 
 var p = new Person();
 ```
+
+call等的绑定情况下：
+
+```js?linenums
+var obj2 = {
+    id: 2333,
+    test: () => console.log(this)
+}
+obj2.test();//window
+obj2.test.call(obj2);//window
+```
