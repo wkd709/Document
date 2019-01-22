@@ -513,7 +513,7 @@ btn.click(function () {
   
 ## 七、js中的this详解
 
->7种情况：
+>8种情况：
 > 1、全局环境调用下的this
 > 2、事件处理函数中的this
 > 3、对象方法内的this
@@ -521,6 +521,7 @@ btn.click(function () {
 > 5、原型链上函数中的this
 > 6、getter和setter中的this
 > 7、箭头函数中的this
+> 8、call, apply, bind的用法
 
 
  ### 7.1 全局环境调用
@@ -806,3 +807,5 @@ var obj2 = {
 obj2.test();//window
 obj2.test.call(obj2);//window
 ```
+
+### 7.8 call, apply, bind的用法
