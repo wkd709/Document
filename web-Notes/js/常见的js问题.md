@@ -523,3 +523,30 @@ btn.click(function () {
 > 7、箭头函数中的this
 
 
+ ### 7.1 全局环境调用
+ 
+ 全局就是window这个对象
+ 
+ ```js
+ function fn1() {
+ 	console.log(this);
+ }
+ fn1();//window
+ 
+ //相当于
+ window.fn1();
+```
+
+全局下使用var声明的变量，都会隐式的被创建为windo对象的属性和方法。所以，到一个函数被调用而没有前缀的时候(也就是说不是通过"."符号来调用)，这其实就是全局对象window在调用它。因此，此时函数内部的this是指向window对象的。再来看个变化版本。
+
+```js?linenums
+let o = {
+    name: 'abc',
+    fn: function() {
+        console.log( this.a );
+    }
+}
+
+let fn2 = o.fn;
+fn2();  // undefined
+```
