@@ -25,9 +25,9 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 .![](./images/1548142191106.png)
 
 
-### 1.2transform限制absolute的100%宽度大小
+#### 1.1.3 transform限制absolute的100%宽度大小
 
-#### 1.2.1 position:absolute 并且width:100%，此元素相对于 static 定位以外的第一个父元素进行定位和width百分比
+##### 1.1.3.1 position:absolute 并且width:100%，此元素相对于 static 定位以外的第一个父元素进行定位和width百分比
 ```html?linenums
 <style>
 .container { width: 191px; height: 191px; border: 2px solid #beceeb; }
@@ -39,7 +39,7 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 ```
 .![](./images/1548142176063.png)
 
-#### 1.2.2 position:absolute 并且width:100%，父级 transform: scale(1);，不管设不设置position: relative;子元素的宽度会以父级的width为百分比
+##### 1.1.3.2 position:absolute 并且width:100%，父级 transform: scale(1);，不管设不设置position: relative;子元素的宽度会以父级的width为百分比
 
 ```html?linenums
 <style>
@@ -51,3 +51,5 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
     <img src="mm1.jpg" />
 </div>
 ```
+
+### 1.2
