@@ -513,3 +513,13 @@ btn.click(function () {
   
 ## 七、js中的this详解
 
+>7种情况：
+> 1、全局环境调用下的this
+> 2、事件处理函数中的this
+> 3、对象方法内的this
+> 4、构造函数中的this
+> 5、原型链上函数中的this
+> 6、getter和setter中的this
+> 7、箭头函数中的this
+
+
