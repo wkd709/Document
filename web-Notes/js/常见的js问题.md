@@ -809,3 +809,21 @@ obj2.test.call(obj2);//window
 ```
 
 ### 7.8 call, apply, bind的用法
+
+#### 7.8.1 call
+
+call方法可以实现对函数的立即调用，并且显示的指定函数内部的this以及传参。
+
+```js?linenums
+let obj = {
+    color: 'green'
+}
+
+function Fn() {
+    console.log( this.color );
+}
+
+Fn();   // undefined
+
+Fn.call(obj);   // green
+```
