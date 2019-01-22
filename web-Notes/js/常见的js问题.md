@@ -557,7 +557,7 @@ fn2();  // undefined
 
 全局对象window调用的函数，内部的this就是指向window，但是有些问题需要注意。严格模式和非严格模式区别（‘use strict’）。在这个情况下，this的指向是有区别的。
 
-非严格模式下如上已经说过了，而严格模式下的全局调用，this指向的是undefined。
+非严格模式下如上已经说过了，指的是window对象，而严格模式下的全局调用，this指向的是undefined。
 
 ```js?linenums
 'use strict'
