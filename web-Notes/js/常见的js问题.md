@@ -566,3 +566,232 @@ function fn1() {
 }
 fn1();//undefined
 ```
+### 7.2  事件处理函数中的this
+
+js中对于事件的处理是采用异步回调的方式，对一个元素绑定一个回调函数，当事件触发的时候去执行这个函数。而对于回调函数的绑定，有下面几种情况：
+
+* 元素标签内绑定
+* 动态绑定
+* 事件监听
+
+#### 7.2.1 元素内绑定
+
+```html?linenums
+<div id="div1" onclick="console.log( this )"></div>
+```
+
+点击元素div1后，我们发现控制台打印的是"<div id="div1" onclick="console.log( this )">"，可以知道的是，元素内联所执行的语句中的this，指向的是元素本身。但是，有一个特例，来改动一下方式。
+
+```html?linenums
+<div id="div1" onclick="(function () {console.log( this )}()"></div>
+```
+
+这个个时候是一个匿名自执行函数，匿名自执行函数中的this，就不是指向元素本身了，而是window对象！我们可以这样理解，匿名自执行函数有独立的作用域，相当于是window在调用它。
+
+#### 7.2.2 动态绑定
+
+```js?linenums
+let div1 = document.getElementById("div1");
+
+div1.onclick = function() {
+    console.log( this );    // div1
+}
+```
+
+这是通过动态绑定的方式，给元素添加了事件，这种情况下，当回调函数执行的时候，是元素div1在调用它，所以此时函数内部的this，是指向元素div1的。
+
+#### 7.2.3 事件监听
+
+```js?linenums
+let div1 = document.getElementById("div1");
+
+div1.addEventListener("click", function() {
+    console.log( this );    // div1
+}, false);
+```
+
+同样的，通过事件监听器的方式绑定的回调函数，内部的this也是指向div1。
+
+所以我们可以总结一下得知：事件处理函数中的this，指向的是触发这个事件的元素。
+
+### 7.3  对象方法中的this
+
+在JavaScript中，对象是可以有属性和方法的，这个方法，其实就是函数。既然是函数，那么内部肯定也会有this，作为对象方法中的this，到底是指的什么呢？看个简单的例子。
+
+```js?linenums
+var name = 'aaa';
+let obj = {
+    name: 'jack',
+    fn: function() {
+        console.log( this.name );
+    }
+}
+
+let f1 = obj.fn;
+
+obj.fn();   // jack
+f1();       // aaa
+```
+
+作为对象的方法调用的函数，它内部的this，就指向这个对象。在这个例子中，当通过obj.fn()的形式调用fn函数的时候，它内部的this指的就是obj这个对象了。
+。至于第二种情况，先把obj.fn赋值给f1，然后通过执行f1来执行函数的情况,这个时候，其实是window对象在调用f1,因此它内部的this就是指向window对象，因而打印的就是'aaa'。
+
+
+如果是一个对象中嵌套着比较深的方法，它内部的this又是什么呢？
+
+```js?linenums
+let person = {
+    name: 'jack',
+    eat: {
+        name: 'apple',
+        fn1: function() {
+            console.log( this.name );
+        },
+        obj: {
+            name: 'grape',
+            fn2: function() {
+                console.log( this.name );
+            }
+        }
+    }
+}
+
+person.eat.fn1();       // apple
+person.eat.obj.fn2();   // grape
+```
+
+这里遵守一个就近原则：如果是通过对象方法的方式调用函数，则函数内部的this指向离它最近一级的那个对象。
+
+### 7.4 构造函数中的this
+
+构造函数其实就是普通的函数，只是它内部一般都书写了许多this，可以通过new的方式调用来生成实例，所以我们一般都用首字母大写的方式，来区分构造函数和一般的函数。构造函数，是JavaScript中书写面向对象的重要方式。
+
+```js?linenums
+function Fn1(name) {
+    this.name = name;
+}
+
+let n1 = new Fn1('abc');
+n1.name; // abc
+```
+
+这是一个非常简单的构造函数书写方式，以及对构造函数的调用。构造函数中的this，以及new调用的这种方式，其实都是为了能够创造实例服务的，否则也就没有意义了。那么，构造函数中的this也就很清楚了：它指向构造函数所创造的实例。当通过new方法调用构造函数的时候，构造函数内部的this就指向这实例，并将相应的属性和方法"生成"给这个实例。通过这个方法，生成的实例才能够获取属性和方法。
+凡事总有例外嘛，构造函数中有这样一种例外，我们看看。
+
+```js?linenums
+function Fn1(name) {
+    this.name = name;
+    return null;
+}
+
+function Fn2(name) {
+    this.name = name;
+    return {a: '123'};
+}
+
+let f1 = new Fn1("ttt");
+console.log( f1 );  // {name: "ttt"}
+
+let f2 = new Fn2("ggg");
+console.log( f2 );  // {a: "123"}
+```
+
+f1是通过new Fn1创建的一个实例，这没有问题。但f2为什么不是我们所想的结果呢？
+当构造函数内部return的是一个对象类型的数据的时候，通过new所得到的，就是构造函数return出来的那个对象；当构造函数内部return的是基本类型数据(数字，字符串，布尔值，undefined,null)，那么对于创建实例没有影响。
+
+
+### 7.5 原型链函数中的this
+
+原型链函数中个this，其实跟构造函数中的this一样，也是指向创建的那个实例。
+
+```js?linenums
+function Fn() {
+    this.name = '878978'
+}
+
+Fn.prototype.sum = function() {
+    console.log(this)
+    return this;
+}
+
+let f5 = new Fn();
+let f6 = new Fn();
+
+console.log( f5 === f5.sum() );     // true
+console.log( f6 === f6.sum() );     // true
+```
+
+### 7.6  getter和setter中的this
+
+我们知道，JavaScript中getter和setter是作为对对象属性读取和修改的一种劫持。可以分别在读取和设置对象相应属性的时候触发。
+
+```js?linenums
+let obj = {
+    n: 1,
+    m: 2,
+    get sum() {
+        console.log(this.n, this.m);
+        return '正在尝试访问sum...';
+    },
+    set sum(k) {
+        this.m = k;
+        return '正在设置obj属性sum...';
+    }
+}
+
+obj.sum;   // 1,2
+obj.sum = 5;  // 正在设置obj属性sum..
+```
+
+getter和setter中的this，规则跟作为对象方法调用时候函数内部的this指向是一样的，它指的就是这个对象本身。
+
+
+#### 7.7 箭头函数中的this
+
+由于箭头函数不绑定this， 它会捕获其所在（即定义的位置）上下文的this值， 作为自己的this值，
+* 所以 call() / apply() / bind() 方法对于箭头函数来说只是传入参数，对它的 this 毫无影响。
+* 考虑到 this 是词法层面上的，严格模式中与 this 相关的规则都将被忽略。（可以忽略是否在严格模式下的影响）
+
+
+箭头函数是ES6中新推出的一种函数简写方法，跟ES5函数最大的区别，就要数它的this规则了。在ES5的函数中，this都是在函数调用的时候，才能确定具体的this指向。而箭头函数，其实是没有this的，但是它内部的这个所谓this，在箭头函数书写的时候，就已经绑定了(绑定父级的this)，并且无法改变。看个例子。
+
+```js?linenums
+let div1 = document.getElementById("div");
+
+div1.onclick = function() {
+    setTimeout(() => {
+        console.log( this );    // div1
+    }, 500);
+}
+```
+
+setTimeout中所绑定的回调函数，其实是window在调用它，所以它内部的this指向的是window。
+但是，当回调函数是箭头函数的写法的时候，内部的this竟然是div1！这在箭头函数书写的时候，就已经决定了它内部的this指向，就是它父级的this。而它父级函数作用域中的this，其实就是元素div1。作为对象方法的箭头函数，其实也是类似的道理。
+
+```js?linenums
+var name = 'aaa';
+let obj = {
+    name: 'jack',
+    fn1: () => {
+        console.log( this.name );
+    }
+}
+
+obj.fn1();  // aaa
+```
+
+没错，还是那句话，当我们写下箭头函数的时候，它内部的this就已经确定了，并且无法修改(call, apply, bind)。这个例子中，箭头函数最近的父级作用域显然是全局环境window，因此它的this就指向window。
+
+因为箭头函数可以捕获其所在上下文的this值 所以
+
+```js?linenums
+function Person() {  
+    this.age = 0;  
+    setInterval(() => {
+        // 回调里面的 `this` 变量就指向了期望的那个对象了
+        this.age++;
+    }, 3000);
+}
+
+var p = new Person();
+```
