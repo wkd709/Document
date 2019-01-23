@@ -616,3 +616,10 @@ box1 { box-sizing: content-box; } /* 默认值 */
 可以看到，所谓 box-sizing:border-box 就是让 100 像素的宽度直接作用在 border box上，从默认的 content box 变成 border box。
 此时，content box 从宽度值中释放，形成了局部的流动性，和 padding 一起自动分配 width 值。
 
+**为何 box-sizing 不支持 margin-box**
+不支持 margin-box 最大的原因是它本身就没有价值。一个本身并不会改变元素尺寸的盒子，它有让 box-sizing 支持的道理吗？box-sizing 就是改变尺寸作用规则的！margin 只有在 width 为 auto 的时候可以改变元素的尺寸，但是，此时元素已经处于流动性状态，根本就不需要 box-sizing。所以，说来说去就是 margin-box本身就没有价值。
+
+如果 box-sizing 开了先河支持了 margin-box，margin box 就变成了一个“显式的盒子”，你让background-origin等属性何去何从，支持还是不支持呢？“margin的背景永远是透明的”这几个大字可是在规范写得清清楚楚难道让背景色在所谓的 margin box 中也显示？显然是不可能的，我们可以打自己的脸，但是要想让规范打自己的脸，可能吗？
+
+对于 box-sizing 的 margin-box 效果，如果是 IE10 及以上版本浏览器，可以试试 flex 布局，如果要兼容 IE8 及以上版本可以使用“宽度分离”，或者特定场景下使用“格式化宽度”来实现，也就是并不是强需求。比方 box-sizing:padding-box，就是因为使用场景有限，仅 Firefox 浏览器支持，并且是曾经支持，从版本 50 开始也不支持了。
+**如何评价*{box-sizing:border-box}**
