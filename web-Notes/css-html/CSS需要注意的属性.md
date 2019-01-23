@@ -634,3 +634,6 @@ box1 { box-sizing: content-box; } /* 默认值 */
   
 * box-sizing 发明的初衷
   box-sizing 可能被发明出来最大的初衷应该是解决替换元素宽度自适应问题。
+  
+### 9.2 相对简单而单纯的 height:auto
+
