@@ -613,3 +613,6 @@ box1 { box-sizing: content-box; } /* 默认值 */
 ```
 .![](./images/1548229359317.png)
 
+可以看到，所谓 box-sizing:border-box 就是让 100 像素的宽度直接作用在 border box上，从默认的 content box 变成 border box。
+此时，content box 从宽度值中释放，形成了局部的流动性，和 padding 一起自动分配 width 值。
+
