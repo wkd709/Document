@@ -458,11 +458,21 @@ IE浏览器不支持伪元素的display值为list-item。对于IE浏览器，普
 
 ## 九、width/height
 
-## 9.1 width
+### 9.1 width
 
 值有：
-* auto
+* auto，默认值
 * 百分比
 * px
 * rem、em等等
 
+#### 9.1.1 深藏不露的 width:auto 
+
+我们应该都知道，width 的默认值是 auto。auto 因为是默认值，包含以下4中不同的宽度表现：
+
+* 充分利用可用空间。比方说，div、p这些元素的宽度默认是 100%于父级容器的。
+* 收缩与包裹。典型代表就是浮动、绝对定位、inline-block元素或者table元素
+* 收缩到最小。这个最容易出现在 table-layout 为 auto 的表格中
+* 超出容器限制。除非有明确的width相关设置，否则以上3中情况尺寸是不会主动超过父级容器宽度的，但存在一些特殊的情况。例如：内容是很长的连续的数字和英文，或者内联元素被设置了white-space:nowrap。
+
+![](./images/1548221765990.png)
