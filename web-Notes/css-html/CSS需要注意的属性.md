@@ -611,3 +611,5 @@ box1 { box-sizing: content-box; } /* 默认值 */
 .box4 { box-sizing: margin-box; } /* 从未支持过 */ 
 
 ```
+.![](./images/1548229359317.png)
+
