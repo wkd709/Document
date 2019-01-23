@@ -521,9 +521,15 @@ IE浏览器不支持伪元素的display值为list-item。对于IE浏览器，普
 我们的这个“内在盒子”又被分成了 4 个盒子，分别是 content box、padding box、border box
 和 margin box。
 
-通常情况下，设置width作用在了content box上。
+通常情况下，设置width作用在了content box上。如果设置 box-sizing: border-box或者IE浏览器下作用在整个盒子上。
 
 如果padding box、border box和 margin box都写上值，整个盒子就会变宽。
 
 .![](./images/1548228114672.png)
 
+这样有两点不足：
+
+* 流动性丢失
+   对于块状元素，如果 width:auto，则元素会如水流般充满整个容器，而一旦设定了 width具体数值，则元素的流动性就会被阻断，因为元素给定宽度就像河流中间竖了两个大闸一样，就没有了流动性。
+   ![](./images/1548228225037.png)
+* 与现实世界表现不一致的困扰。
