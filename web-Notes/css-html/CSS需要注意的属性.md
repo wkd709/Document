@@ -590,3 +590,24 @@ IE浏览器不支持伪元素的display值为list-item。对于IE浏览器，普
 
 那有没有什么既无须计算，又无须额外嵌套标签的实现呢？有，那就是可以改变 width作用细节的 box-sizing 属性。
 
+#### 9.1.4 改变 width/height 作用细节的 box-sizing
+
+box-sizing 虽然是 CSS3 属性，但是，让人受宠若惊的是 IE8 浏览器也是支持它的，不
+过需要加-ms-私有前缀，但 IE9 浏览器开始就不需要私有前缀了。
+
+**box-sizing 的作用**
+
+box-sizing 顾名思义就是“盒尺寸”。实际上，其更准确的叫法应该是“盒尺寸的作用细节”。
+
+还记不记得“内在盒子”的 4 个盒子？它们分别是 content box、padding box、border box 和 margin box。
+默认情况下，width是作用在 content box 上的，box-sizing 的作用就是可以把 width 作用的盒子变成其他几个。
+
+```css
+box-sizing 可以有下面这些写法:
+
+box1 { box-sizing: content-box; } /* 默认值 */
+.box2 { box-sizing: padding-box; } /* Firefox 曾经支持 */
+.box3 { box-sizing: border-box; } /* 全线支持 */
+.box4 { box-sizing: margin-box; } /* 从未支持过 */ 
+
+```
