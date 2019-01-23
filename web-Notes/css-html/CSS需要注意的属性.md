@@ -458,3 +458,11 @@ IE浏览器不支持伪元素的display值为list-item。对于IE浏览器，普
 
 ## 九、width/height
 
+## 9.1 width
+
+值有：
+* auto
+* 百分比
+* px
+* rem、em等等
+
