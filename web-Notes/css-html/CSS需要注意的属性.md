@@ -736,5 +736,10 @@ body {
 	而定位元素left,top,bottom,right和width、height的值都把position：relative的padding值计算在内了。
 	
 	
+### 9.3 min-width/max-width和min-height/max-height
+
+它们都是与尺寸相关的，盒尺寸机制和一些值的渲染规则也是一样的。
+
+#### 9.3.1 为流体而生的 min-width/max-width
 	
 	
