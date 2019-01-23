@@ -733,6 +733,8 @@ body {
 	.![position设置的定位](./images/1548231821369.png)
 	
 	可以看到，非定位元素的宽高百分比计算不会将 padding 计算在内。
-	而定位元素left,top,bottom,right的值都把position：relative的padding值计算在内了。
+	而定位元素left,top,bottom,right和width、height的值都把position：relative的padding值计算在内了。
+	
+	
 	
 	
