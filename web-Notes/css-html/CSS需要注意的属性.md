@@ -517,3 +517,13 @@ IE浏览器不支持伪元素的display值为list-item。对于IE浏览器，普
 #### 9.1.2 width值作用的细节
 
 ![](./images/1548227855283.png)
+
+我们的这个“内在盒子”又被分成了 4 个盒子，分别是 content box、padding box、border box
+和 margin box。
+
+通常情况下，设置width作用在了content box上。
+
+如果padding box、border box和 margin box都写上值，整个盒子就会变宽。
+
+.![](./images/1548228114672.png)
+
