@@ -410,3 +410,16 @@ hidden：元素的内容会在元素框的边界处剪裁，并且超出剪裁�
 ## 七、选择器
 
 
+### 7.1 类选择器
+指“.”这个点号开头的选择器。
+### 7.2 ID选择器
+指“#”打头，权重相当高，
+### 7.3 属性选择器
+指含有[ ]的选择器，形如[title]{}、[title= "css-world"]{}、[title~="css-world"]{}、[title^= "css-world"]{}和[title$="cssworld"]{}等。
+### 7.4  伪类选择器
+一般指前面有个英文冒号（：）选择器，如:first-child 或:lastchild 等。
+### 7.5 伪元素选择器
+就是有连续两个冒号的选择器，如::first-line::firstletter、::before 和::after。
+### 7.6  关系选择器
+
+
