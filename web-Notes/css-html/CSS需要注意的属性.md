@@ -689,5 +689,14 @@ body {
  white-space: nowrap;
  background-color: #cd0000;
 } 
+.text {
+ display: inline-block;
+ width: 100%;
+ background-color: #34538b;
+ color: #fff;
+} 
 </style>
 ```
+
+.![](./images/1548231165576.png)
+
