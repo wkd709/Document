@@ -745,4 +745,19 @@ body {
 ## 十、background
 
 ### 10.1 background-size
+
+
+background-size 设置背景图片大小。图片可以保有其原有的尺寸，或者拉伸到新的尺寸，或者在保持其原有比例的同时缩放到元素的可用空间的尺寸。
+
+background-size 是 **CSS3** 新增的属性，但IE8以下不支持，可以用过滤镜来实现效果。
+
+**值**
+background-size：contain; // 缩小图片来适应元素的尺寸（保持像素的长宽比）；
+background-size ：cover; // 扩展图片来填满元素（保持像素的长宽比）；
+background-size ：100px 100px; // 调整图片到指定大小；
+
+background-size ：50% 100%; // 调整图片到指定大小，百分比相对于包含元素的尺寸。
+
+**浏览器兼容：**
+
 ![](./images/1551925685181.png)
