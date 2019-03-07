@@ -744,6 +744,17 @@ body {
 	
 ## 十、background
 
+background 是一种 CSS 简写属性，用于一次性集中定义各种背景属性，包括 color, image, origin 与 size, repeat 方式等等。
+
+> 此属性是一个 简写属性，可以在一次声明中定义一个或多个属性：background-clip、background-color、background-image、background-origin、background-position、background-repeat、background-size，和 background-attachment。
+
+**注意: ** 
+
+background-color 只能在background的最后一个属性上定义，因为整个元素只有一种背景颜色。
+
+![](./images/1551930030495.png)
+
+
 ### 10.1 background-size
 
 
@@ -797,7 +808,46 @@ background-size: unset;
 	  -moz-border-image: url(bg-image.png) 0;    /* Gecko 1.9.1 (Firefox 3.5) */
 	}
 	```
-	
+
+####  10.1.1 注意 -ms-filter
+
+>非标准
+>此功能是非标准的，不在标准轨道上。不要在面向Web的生产站点上使用它：它不适用于每个用户。实现之间可能存在很大的不兼容性，并且行为可能在将来发生变化。
+>已过时
+>此功能已过时。虽然它可能仍然适用于某些浏览器，但不鼓励使用它，因为它可以随时删除。尽量避免使用它。
+>该-ms-filter CSS属性是Microsoft扩展，设置或获取应用于对象的滤镜或滤镜集合。
+>警告：
+>不要与标准filter属性混淆，因为这两者从根本上是不相容的
+>重要说明：自Windows Internet Explorer 9起，此功能已弃用。从Internet Explorer 10开始，此功能已删除，不应再使用。
+
+但在 ie8上，目前可以解决一些兼容性问题。
+
+MDN上没有过多的详细介绍，就介绍了下Gradient，如下：
+
+**Gradient（梯度）**
+progid:DXImageTransform.Microsoft.Gradient( < properties > )
+
+
+< properties > = [ < Enabled > | < EndColor >  | < EndColorStr > | < GradientType > | < StartColor > | < StartColorStr > ]
+
+* Enabled ：默认值： true。设置false为禁用。
+* EndColor  ： 最终颜色，仅支持#RRGGBB符号中的不透明颜色。
+* EndColorStr ： 最终颜色#RRGGBB使用#AARRGGBB符号支持不透明颜色（）和具有Alpha不透明度的颜色  。
+* GradientType ： 默认值:( 0相当于linear-gradient(to bottom, …)） 。设置为非零值以使渐变水平（相当于linear-gradient(to right, …)）
+* StartColor ： 最终颜色，仅支持#RRGGBB符号中的不透明颜色。
+* StartColorStr ： 最终颜色#RRGGBB使用#AARRGGBB符号支持不透明颜色（）和具有Alpha不透明度的颜色  。
+
+```css
+.gradient.horizontal {
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Gradient(startColorStr="#ffffff", endColorStr="#000000", GradientType=1)'; 
+  background-image: linear-gradient(to right, #ffffff 0%, #000000 100%); 
+}
+
+.gradient.vertical {
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Gradient(startColorStr="#ffffff", endColorStr="#000000", GradientType=0)';
+  background-image: linear-gradient(to bottom, #ffffff 0%, #000000 100%);
+}
+```
 ## 十一、filter
 
 注意 filter与 -ms-filter不能混淆，因为两者从根本上不相容
