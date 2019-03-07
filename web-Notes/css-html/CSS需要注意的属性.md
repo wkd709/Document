@@ -764,6 +764,10 @@ background-size: inherit;
 background-size: initial;
 background-size: unset;
 
+
+例如：
+![](./images/1551926316834.png)
+
 **浏览器兼容：**
 
 ![](./images/1551925685181.png)
