@@ -756,7 +756,13 @@ background-size：contain; // 缩小图片来适应元素的尺寸（保持像�
 background-size ：cover; // 扩展图片来填满元素（保持像素的长宽比）；
 background-size ：100px 100px; // 调整图片到指定大小；
 
-background-size ：50% 100%; // 调整图片到指定大小，百分比相对于包含元素的尺寸。
+background-size ：50% 100%; // 调整图片到指定大小，百分比相对于包含元素的尺寸。 第一个值指定图片的宽度，第二个值指定图片的高度
+background-size: 50%； 一个值: 这个值指定图片的宽度，图片的高度隐式的为auto 
+
+/ * 全局属性 * /
+background-size: inherit;
+background-size: initial;
+background-size: unset;
 
 **浏览器兼容：**
 
