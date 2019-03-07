@@ -752,8 +752,11 @@ background-size 设置背景图片大小。图片可以保有其原有的尺寸�
 background-size 是 **CSS3** 新增的属性，但IE8以下不支持，可以用过滤镜来实现效果。
 
 **值**
-background-size：contain; // 缩小图片来适应元素的尺寸（保持像素的长宽比）；
-background-size ：cover; // 扩展图片来填满元素（保持像素的长宽比）；
+
+默认值：auto auto
+
+background-size：contain; // 缩小图片来适应元素的尺寸（保持像素的长宽比）；缩放背景图片以完全装入背景区，可能背景区部分空白。
+background-size ：cover; // 扩展图片来填满元素（保持像素的长宽比）；尽可能大的缩放背景图像并保持图像的宽高比例（图像不会被压扁）。该背景图以它的全部宽或者高覆盖所在容器。当容器和背景图大小不同时，背景图的 左/右 或者 上/下 部分会被裁剪。
 background-size ：100px 100px; // 调整图片到指定大小；
 
 background-size ：50% 100%; // 调整图片到指定大小，百分比相对于包含元素的尺寸。 第一个值指定图片的宽度，第二个值指定图片的高度
@@ -767,7 +770,37 @@ background-size: unset;
 
 例如：
 ![](./images/1551926316834.png)
-
+注意：没有被背景图片覆盖的背景区域仍然会显示用background-color属性设置的背景颜色。此外，如果背景图片设置了透明或者半透明属性，衬在背景图片后面的背景色也会显示出来。
 **浏览器兼容：**
 
 ![](./images/1551925685181.png)
+
+* 对于Internet Explorer之前的IE8 
+	虽然Internet Explorer 8不支持该  background-size 属性，但可以使用非标准-ms-filter 属性模拟其某些功能  ：
+
+	```css
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
+	/*这模拟了价值cover。*/
+	```
+* In Firefox 3.5
+	虽然在Firefox 3.6中添加了此属性，但可以使用在Firefox 3.5中完全在背景上拉伸图像-moz-border-image。
+
+	```css
+	.foo {
+	  background-image: url(bg-image.png);
+
+	  -webkit-background-size: 100% 100%;           /* Safari 3.0 */
+		 -moz-background-size: 100% 100%;           /* Gecko 1.9.2 (Firefox 3.6) */
+		   -o-background-size: 100% 100%;           /* Opera 9.5 */
+			  background-size: 100% 100%;           /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
+
+	  -moz-border-image: url(bg-image.png) 0;    /* Gecko 1.9.1 (Firefox 3.5) */
+	}
+	```
+	
+## 十一、filter
+
+注意 filter与 -ms-filter不能混淆，因为两者从根本上不相容
+
+>CSS属性将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像，背景和边框的渲染。
+
