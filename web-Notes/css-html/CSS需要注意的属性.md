@@ -884,7 +884,7 @@ background-clip  设置元素的背景（背景图片或颜色）是否延伸到
 
 #### 10.3.1 语法
 
-/ * Keyword values * / 
+/ * Keyword values * /
 background-clip: border-box;
 background-clip: padding-box;
 background-clip: content-box;
