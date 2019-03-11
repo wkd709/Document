@@ -877,6 +877,10 @@ background-attachment: inherit;//继承
 
 
 ### 10.3  background-clip
+background-clip  设置元素的背景（背景图片或颜色）是否延伸到边框下面。
+
+
+如果没有设置背景图片（background-image）或背景颜色（background-color），那么这个属性只有在边框（ border）被设置为非固实（soild）、透明或半透明时才能看到视觉效果（与 border-style 或 border-image 有关），否则，本属性产生的样式变化会被边框覆盖。
 
 #### 10.3.1 语法
 
@@ -891,6 +895,17 @@ background-clip: inherit;
 background-clip: initial;
 background-clip: unset;
 
+**border-box**
+背景延伸至边框外沿（但是在边框下层）。
+
+**padding-box**
+背景延伸至内边距（padding）外沿。不会绘制到边框处。
+
+**content-box**
+背景被裁剪至内容区（content box）外沿。
+
+**text**
+背景被裁剪成文字的前景色。
 
 
 ## 十一、filter
