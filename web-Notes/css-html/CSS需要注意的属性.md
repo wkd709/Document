@@ -908,6 +908,38 @@ background-clip: unset;
 背景被裁剪成文字的前景色。
 text值，兼容性比较低，一般不用
 
+### 10. background-color
+
+CSS属性中的 background-color 会设置元素的背景色, 属性的值为颜色值或关键字"transparent"二者选其一。
+
+初始值 transparent
+
+**语法**
+
+/ * Keyword values * /
+background-color: red;
+
+/ * Hexadecimal value * /
+background-color: #bbff00;
+
+/ * RGB value * / 
+background-color: rgb(255, 255, 128);
+
+/ * HSLA value * /
+background-color: hsla(50, 33%, 25%, 0.75);
+
+/ * Special keyword values * /
+background-color: currentColor;
+background-color: transparent;
+
+/ * Global values * /
+background-color: inherit;
+background-color: initial;
+background-color: unset;
+
+**取值**
+
+一个描述背景统一颜色的 CSS < color > 值。即使一个或几个的 background-image 被定义，如果图像是不透明的，通过透明度该颜色也能影响到渲染。在 CSS 中，transparent 是一种颜色。
 
 ## 十一、filter
 
