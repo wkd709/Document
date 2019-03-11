@@ -1031,6 +1031,33 @@ background-position: unset;
 
 ![](./images/1552292626963.png)
 
+### 10.8  background-repeat
+
+属性定义背景图像的重复方式。背景图像可以沿着水平轴，垂直轴，两个轴重复，或者根本不重复。
+
+**语法**
+
+/ * 单值语法 * /
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: repeat;
+background-repeat: space;
+background-repeat: round;
+background-repeat: no-repeat;
+
+/ * 双值语法: 水平horizontal | 垂直vertical * / 
+background-repeat: repeat space;
+background-repeat: repeat repeat;
+background-repeat: round space;
+background-repeat: no-repeat round;
+
+background-repeat: inherit;
+
+**值**
+
+![](./images/1552292778201.png)
+
+* repeat 。 图像
 ## 十一、filter
 
 注意 filter与 -ms-filter不能混淆，因为两者从根本上不相容
