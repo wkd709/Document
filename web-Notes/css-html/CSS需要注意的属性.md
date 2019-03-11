@@ -908,7 +908,7 @@ background-clip: unset;
 背景被裁剪成文字的前景色。
 text值，兼容性比较低，一般不用
 
-### 10. background-color
+### 10.4 background-color
 
 CSS属性中的 background-color 会设置元素的背景色, 属性的值为颜色值或关键字"transparent"二者选其一。
 
@@ -941,7 +941,7 @@ background-color: unset;
 
 一个描述背景统一颜色的 CSS < color > 值。即使一个或几个的 background-image 被定义，如果图像是不透明的，通过透明度该颜色也能影响到渲染。在 CSS 中，transparent 是一种颜色。
 
-### 10.4 background-image
+### 10.5 background-image
 
 background-image 属性用于为一个元素设置一个或者多个背景图像。图像在绘制时，以z方向堆叠的方式进行。先指定的图像会在之后指定的图像上面绘制。因此指定的第一个图像最接近用户。
 
@@ -949,7 +949,87 @@ background-image 属性用于为一个元素设置一个或者多个背景图像
 
 如果一个指定的图像无法被绘制 (比如，设定的URI所表示的文件无法被加载)，浏览器会将此情况等同于其值被设为none。
 
+初始值	none
 
+**语法**
+
+background-image: none;
+background-image: url(http:// .... );
+
+background-image: inherit;
+
+
+**取值**
+
+* none 是一个表示无背景图的关键字
+*  < image > 用来标记将要显示的图片。支持多背景设置，背景之间以逗号隔开。
+
+### 10.6 background-origin 
+
+背景图片background-image属性的原点位置的背景相对区域
+
+注意：当使用background-attactment为fixed时，该属性将忽略不起作用。
+
+初始值  padding-box
+
+**语法**
+
+background-origin: border-box
+background-origin: padding-box
+background-origin: content-box
+
+background-origin: inherit
+
+**属性值**
+
+* border-box   背景图片的摆放以border区域为参考
+* padding-box   背景图片的摆放以padding区域为参考
+* content-box   背景图片的摆放以content区域为参考
+
+### 10.7 background-position
+
+background-position 为每一个背景图片设置初始位置。这个位置是相对于有background-origin定义的位置图层的。
+
+**语法**
+
+/ * Keyword values * /
+background-position: top;
+background-position: bottom;
+background-position: left;
+background-position: right;
+background-position: center;
+
+/ * < percentage > values * /
+background-position: 25% 75%;
+
+/ * < length > values * /
+background-position: 0 0;
+background-position: 1cm 2cm;
+background-position: 10ch 8em;
+
+/ * Multiple images * /
+background-position: 0 0, center;
+
+/ * Edge offsets values * /
+background-position: bottom 10px right 20px;
+background-position: right 3em bottom 10px;
+background-position: bottom 10px right;
+background-position: top right 10px;
+
+/ * Global values * /
+background-position: inherit;
+background-position: initial;
+background-position: unset;
+
+**值**
+
+* 关键字 center，用来居中背景图片
+* 关键字 top, left, bottom, right 中的一个。用来指定把这个项目（原文为 item）放在哪一个边缘。另一个维度被设置成 50%，所以这个项目（原文为 item）被放在指定边缘的中间位置。
+* < length > 或 < percentage >。指定相对于左边缘的 x 坐标，y 坐标被设置成 50%。
+* 如果一个值是  top 或  bottom，那么另一个值不应该是 top 或 bottom。
+* 如果一个值是  left 或   right，那么另一个值不应该是 left 或 right。
+
+![](./images/1552292626963.png)
 
 ## 十一、filter
 
