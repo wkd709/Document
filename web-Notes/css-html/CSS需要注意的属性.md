@@ -906,7 +906,7 @@ background-clip: unset;
 
 **text**
 背景被裁剪成文字的前景色。
-text值，兼容性比较低
+text值，兼容性比较低，一般不用
 
 
 ## 十一、filter
