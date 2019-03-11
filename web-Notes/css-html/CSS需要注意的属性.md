@@ -875,11 +875,24 @@ background-attachment: inherit;//继承
 * scroll
    此关键字表示背景相对于元素本身固定， 而不是随着它的内容滚动（对元素边框是有效的）。
 
-**background-attachment: scroll：**
-![background-attachment: scroll;](./images/1552268351226.png)
 
-**background-attachment: fixed：**
-![background-attachment: fixed;](./images/1552268432748.png)
+### 10.3  background-clip
+
+#### 10.3.1 语法
+
+/ * Keyword values * / 
+background-clip: border-box;
+background-clip: padding-box;
+background-clip: content-box;
+background-clip: text;
+
+/ * Global values * /
+background-clip: inherit;
+background-clip: initial;
+background-clip: unset;
+
+
+
 ## 十一、filter
 
 注意 filter与 -ms-filter不能混淆，因为两者从根本上不相容
