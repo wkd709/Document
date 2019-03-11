@@ -941,6 +941,16 @@ background-color: unset;
 
 一个描述背景统一颜色的 CSS < color > 值。即使一个或几个的 background-image 被定义，如果图像是不透明的，通过透明度该颜色也能影响到渲染。在 CSS 中，transparent 是一种颜色。
 
+### 10.4 background-image
+
+background-image 属性用于为一个元素设置一个或者多个背景图像。图像在绘制时，以z方向堆叠的方式进行。先指定的图像会在之后指定的图像上面绘制。因此指定的第一个图像最接近用户。
+
+然后元素的 borders 会在它们之上被绘制，而background-color会在它们之下绘制。图像的绘制与盒子以及盒子的边框的关系，需要在CSS属性background-clip 和 background-origin  中定义。
+
+如果一个指定的图像无法被绘制 (比如，设定的URI所表示的文件无法被加载)，浏览器会将此情况等同于其值被设为none。
+
+
+
 ## 十一、filter
 
 注意 filter与 -ms-filter不能混淆，因为两者从根本上不相容
