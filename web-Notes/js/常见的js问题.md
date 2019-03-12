@@ -1083,3 +1083,8 @@ $.ajax({
 网上说是涉及到跨站脚本攻击，所以不让提交。
 
 **解决**
+
+>jQuery.support.cors = true;
+
+
+>在$.ajax()前加上下面这句话（jQuery.support.cors = true;），这是对cors协议的一种实现，CORS是W3C中额度一项新特性，能让jQuery支持跨域请求。
