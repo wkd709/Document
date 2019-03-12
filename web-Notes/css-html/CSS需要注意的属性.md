@@ -1111,6 +1111,10 @@ background-repeat: inherit;
   再例如：
   ![](./images/1552369869165.png)
   
+  按照正常的思维，z-index层级越高，内容越应该在上面显示，在大部分的浏览器在大部分的情况下，确实如此，但是不绝对。尤其遇到IE6。
+
+　　在IE6下的层级高低不仅要看本身，还要看自己的父元素是否给力：父元素的 position 属性为 relative或absolute 时，子元素的 absolute 属性是相对于父元素而言的。而在IE6下的层级的表现有时候不是看子元素的 z-index 多高，而要看它们的父元素的 z-index 谁高谁低。点击 Result 可以看到HTML对应的VIEW。
+  
   
   **解决办法**
   
