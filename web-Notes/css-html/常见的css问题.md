@@ -118,3 +118,56 @@ absolute 绝对定位元素，如果含有overflow不为visible的父级元素�
 //这段文字只在非IE浏览器显示
 <![endif]-->
 ```
+
+**CSS hack方式二：类内属性前缀法**
+
+属性前缀法是在CSS样式属性名前加上一些只有特定浏览器才能识别的hack前缀，以达到预期的页面展现效果
+
+* IE hack 技术
+
+	```css?linenums
+	_width: 400px;            /* _是针对IE6*/
+	+width: 300px;           /* +是针对IE6、IE7*/
+	*width: 400px;            /*  *是针对IE6、IE7*/
+	width: 200px\9;          /* \9是针对IE6 IE7 IE8 IE9 IE10*/
+	width: 100px\0;          /* \0是针对IE8 IE9 IE10 IE11 */
+	```
+
+* 浏览器内核与前缀
+	![](./images/1552361726009.png)
+	
+**CSS hack方式三：选择器前缀法**
+
+选择器前缀法是针对一些页面表现不一致或者需要特殊对待的浏览器，在CSS选择器前加上一些只有某些特定浏览器才能识别的前缀进行hack。
+
+目前最常见的是：
+
+*html	*前缀只对IE6生效
+*+html	*+前缀只对IE7生效
+@media screen\9 {body { background: gray; }}	只对IE6/7生效
+@media \0screen {body { background: red; }}	只对IE8有效
+@media \0screen\,screen\9 {body { background: blue; }}	只对IE6/7/8有效
+@media screen\0 {body { background: green; }}	只对IE8/9/10有效
+@media screen and (min-width:0\0) {body { background: gray; }}	只对IE9/10有效
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)  {body { background: orange; }}	只对IE10有效
+
+**CSS3选择器结合JavaScript的Hack**
+
+    我们用IE10进行举例：
+
+        由于IE10用户代理字符串（UserAgent）为：Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)，所以我们可以使用Javascript将此属性添加到文档标签中，再运用CSS3基本选择器匹配。
+		
+
+```js?linenums
+//JavaScript代码:
+var htmlObj = document.documentElement;
+htmlObj.setAttribute('data-useragent',navigator.userAgent);
+htmlObj.setAttribute('data-platform', navigator.platform );
+```
+
+```css?linenums
+//CSS3匹配代码：
+html[data-useragent*='MSIE 10.0'] #id {
+        color: #F00;
+}
+```
