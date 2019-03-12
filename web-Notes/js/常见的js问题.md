@@ -1063,3 +1063,4 @@ $.ajax({
     success: function (data) { **** }
 });
 ```
+在chrome、Firefox和IE9以上的都正常发送请求，IE10以下没有发送请求。
