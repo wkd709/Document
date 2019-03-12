@@ -179,3 +179,7 @@ html[data-useragent*='MSIE 10.0'] #id {
 比如由于IE8及以下版本不支持CSS3,而我们的项目页面使用了大量CSS3新属性在IE9/Firefox/Chrome下正常渲染，这种情况下如果不使用css3pie或htc或条件注释等方法时,可能就得让IE8-的专属hack出马了。
 
 使用hack虽然对页面表现的一致性有好处，但过多的滥用会造成html文档混乱不堪，增加管理和维护的负担。
+
+**各浏览器下Hack的写法**
+
+![Firefox](./images/1552362817849.png)
