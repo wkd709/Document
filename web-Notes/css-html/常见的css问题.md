@@ -174,3 +174,5 @@ html[data-useragent*='MSIE 10.0'] #id {
 
 #### 2.1.3 CSS hack利弊
 
+一般情况下，我们尽量避免使用CSS hack，但是有些情况为了顾及用户体验实现向下兼容，不得已才使用hack。
+
