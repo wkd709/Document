@@ -183,3 +183,7 @@ html[data-useragent*='MSIE 10.0'] #id {
 **各浏览器下Hack的写法**
 
 ![Firefox](./images/1552362817849.png)
+
+![Webkit内核浏览器](./images/1552362853598.png)
+
+![Opera浏览器](./images/1552362865822.png)
