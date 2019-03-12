@@ -1086,7 +1086,6 @@ $.ajax({
 
 >jQuery.support.cors = true;
 
-
 >在$.ajax()前加上下面这句话（jQuery.support.cors = true;），这是对cors协议的一种实现，CORS是W3C中额度一项新特性，能让jQuery支持跨域请求。
 
 注意：实际开发环境中是不可以加上jQuery.support.cors = true;这句话的。
