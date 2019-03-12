@@ -1095,3 +1095,5 @@ background-repeat: inherit;
 ```
 
 ![](./images/1552369437987.png)
+
+注：Q代表Quriks Mode，即混杂模式。
