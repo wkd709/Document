@@ -1067,6 +1067,7 @@ $.ajax({
 
 **解决思路**
 
+$.ajax()中把错误信息显示出来
 ```js?linenums
 $.ajax({
     url: ***,
@@ -1076,3 +1077,5 @@ $.ajax({
         error: function (a, b, c) {alert(c);}
 });
 ```
+
+原来是 No Transport错误
