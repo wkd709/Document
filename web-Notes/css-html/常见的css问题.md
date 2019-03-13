@@ -188,3 +188,14 @@ html[data-useragent*='MSIE 10.0'] #id {
 
 ![Opera浏览器](./images/1552362865822.png)
 
+## 三、纯 CSS 实现多行文字截断
+
+一行文字溢出省略号显示：
+
+```css
+div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
