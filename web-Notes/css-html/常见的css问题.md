@@ -241,7 +241,6 @@ p::after {
     bottom:0;
     right:0;
     padding:0 20px 1px 45px;
-    
     /* 为了展示效果更好 */
     background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
     background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
@@ -250,3 +249,15 @@ p::after {
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
 }
 ```
+
+实现原理很好理解，就是通过伪元素绝对定位到行尾并遮住文字，再通过 overflow: hidden 隐藏多余文字。
+
+
+从实现效果来看，它所具备的优点：
+
+* 兼容性好，对各大主流浏览器有好的支持
+* 响应式截断，根据不同宽度做出调整
+
+
+但是它无法识别文字的长短，即文本超出范围才显示省略号，否则不显示省略号。
+还有因为是我们人为地在文字末尾添加一个省略号效果，就会导致它跟文字其实没有贴合的很紧密，遇到这种情况可以通过添加 word-break: break-all; 使一个单词能够在换行时进行拆分。
