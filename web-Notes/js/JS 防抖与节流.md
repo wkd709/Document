@@ -136,3 +136,42 @@ title: JS 防抖与节流
 * throttle
     *  鼠标不断点击触发，mousedown(单位时间内只触发一次)
     *  监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断
+
+### 2.2 节流
+
+```html?linenums
+<button id="throttle">点我节流！</button>
+    
+<script>
+	window.onload = function () {
+		// 1、获取按钮，绑定点击事件
+		var myThrottle = document.getElementById("throttle");
+		myThrottle.addEventListener("click", throttle(sayThrottle));
+	}
+
+	// 2、节流函数体
+	function throttle(fn) {
+		// 4、通过闭包保存一个标记
+		let canRun = true;
+		return function () {
+			// 5、在函数开头判断标志是否为 true，不为 true 则中断函数
+			if (!canRun) {
+				return;
+			}
+			// 6、将 canRun 设置为 false，防止执行之前再被执行
+			canRun = false;
+			// 7、定时器
+			setTimeout(() => {
+				fn.call(this, arguments);
+				// 8、执行完事件（比如调用完接口）之后，重新将这个标志设置为 true
+				canRun = true;
+			}, 1000);
+		};
+	}
+
+	// 3、需要节流的事件
+	function sayThrottle() {
+		console.log("节流成功！");
+	}
+</script>
+```
