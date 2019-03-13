@@ -213,3 +213,40 @@ div {
   -webkit-box-orient: vertical;
 }
 ```
+
+从效果上来看，它的优点有：
+
+* 响应式截断，根据不同宽度做出调整
+* 文本超出范围才显示省略号，否则不显示省略号
+* 浏览器原生实现，所以省略号位置显示刚好
+
+但是缺点也是很直接，因为 -webkit-line-clamp 是一个不规范的属性，它没有出现在 CSS 规范草案中。也就是说只有 webkit 内核的浏览器才支持这个属性，像 Firefox, IE 浏览器统统都不支持这个属性，浏览器兼容性不好。
+
+使用场景：多用于移动端页面，因为移动设备浏览器更多是基于 webkit 内核，除了兼容性不好，实现截断的效果不错。
+
+**定位元素实现多行文本截断**
+
+
+```css
+p {
+    position: relative;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+}
+p::after {
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 45px;
+    
+    /* 为了展示效果更好 */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+}
+```
