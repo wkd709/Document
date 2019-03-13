@@ -141,7 +141,6 @@ title: JS 防抖与节流
 
 ```html?linenums
 <button id="throttle">点我节流！</button>
-    
 <script>
 	window.onload = function () {
 		// 1、获取按钮，绑定点击事件
