@@ -1135,3 +1135,5 @@ F5 和 Ctrl+F5 使用的频率很高，可是在使用的时候有没有想过 F
 ### 10.2 Ctrl+F5
 
 ![](./images/1552446898245.png)
+
+我们发现在请求头中多了两个 Cache-Control:no-cache，Pragma:no-cache 参数，这两个参数什么意思呢？
