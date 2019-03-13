@@ -174,3 +174,4 @@ title: JS 防抖与节流
 	}
 </script>
 ```
+![](https://user-gold-cdn.xitu.io/2019/3/12/169721de93ace1d0?imageslim)
