@@ -60,4 +60,3 @@ title: JS 防抖与节流
 </script>
 ```
 
-![](./images/1552443477014.png)
