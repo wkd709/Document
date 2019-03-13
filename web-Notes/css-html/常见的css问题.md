@@ -204,3 +204,12 @@ div {
 
 
 **多行**
+
+```css
+div {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+```
