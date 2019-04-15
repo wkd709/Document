@@ -459,3 +459,4 @@ console.log(generateMixed(7))
 ### 8.7 String.prototype.trim = function() {    return this.replace(/^\s*((?:[\S\s]*\S)?)\s*$/, '$1');  }
 
 
+## 九、 
