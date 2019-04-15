@@ -99,6 +99,52 @@ var quickSort = function(arr) {
 //结果： [1, 4, 6, 7, 8, 45, 55, 66]
 ```
 
-## 2.4 图示
+### 2.4 图示
 
 ![](./images/1555298497829.png)
+
+在这张示意图里，基准的取值规则是取最左边的元素，黄色代表当前的基准，绿色代表小于基准的元素，紫色代表大于基准的元素。
+
+我们会发现，绿色的元素会紧挨在基准的右边，紫色的元素会被移到后面，然后交换基准和绿色的最后一个元素，此时，基准处于正确的位置，即前面的元素都小于基准值，后面的元素都大于基准值。然后再对前面的和后面的多个元素取基准，做排序。
+
+### 2.5 in-place 实现
+
+```js?linenums
+function quickSort(arr) {
+    // 交换元素
+    function swap(arr, a, b) {
+        var temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    function partition(arr, left, right) {
+        var pivot = arr[left];
+        var storeIndex = left;
+
+        for (var i = left + 1; i <= right; i++) {
+            if (arr[i] < pivot) {
+                swap(arr, ++storeIndex, i);
+            }
+        }
+
+        swap(arr, left, storeIndex);
+
+        return storeIndex;
+    }
+
+    function sort(arr, left, right) {
+        if (left < right) {
+            var storeIndex = partition(arr, left, right);
+            sort(arr, left, storeIndex - 1);
+            sort(arr, storeIndex + 1, right);
+        }
+    }
+
+    sort(arr, 0, arr.length - 1);
+
+    return arr;
+}
+
+console.log(quickSort(6, 7, 3, 4, 1, 5, 9, 2, 8))
+```
