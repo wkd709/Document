@@ -1,5 +1,5 @@
 ---
-title: JavaScript专题之解读 v8 排序源码
+title: 排序
 ---
 
 [JavaScript专题之解读 v8 排序源码](https://github.com/mqyqingfeng/Blog/issues/52)
@@ -118,7 +118,7 @@ function quickSort(arr) {
         arr[b] = temp;
     }
 
-    function partition(arr, left, right) {
+    function partition(arr, left, right) {// [6, 7, 3, 4, 1, 5, 9, 2, 8] , 0, 8
         var pivot = arr[left];
         var storeIndex = left;
 
@@ -133,7 +133,7 @@ function quickSort(arr) {
         return storeIndex;
     }
 
-    function sort(arr, left, right) {
+    function sort(arr, left, right) { 
         if (left < right) {
             var storeIndex = partition(arr, left, right);
             sort(arr, left, storeIndex - 1);
@@ -141,10 +141,33 @@ function quickSort(arr) {
         }
     }
 
-    sort(arr, 0, arr.length - 1);
+    sort(arr, 0, arr.length - 1); 
 
     return arr;
 }
 
-console.log(quickSort(6, 7, 3, 4, 1, 5, 9, 2, 8))
+console.log(quickSort([6, 7, 3, 4, 1, 5, 9, 2, 8]))
 ```
+
+### 2.6 综合因素
+
+#### 2.6.1 稳定性
+
+**快速排序是不稳定的排序。**如果要证明一个排序是不稳定的，你只用举出一个实例就行。
+
+例如： 
+
+	就以数组 [1, 2, 3, 3, 4, 5] 为例，因为基准的选择不确定，假如选定了第三个元素(也就是第一个 3) 为基准，所有小于 3 的元素在前面，大于等于 3 的在后面，排序的结果没有问题。可是如果选择了第四个元素(也就是第二个 3 )，小于 3 的在基准前面，大于等于 3 的在基准后面，第一个 3 就会被移动到 第二个 3 后面，所以快速排序是不稳定的排序。
+	
+#### 2.6.2 时间复杂度
+
+快速排序的时间复杂度最好为 O(nlogn)，可是为什么是 nlogn 呢？来一个并不严谨的证明：
+
+在最佳情况下，每一次都平分整个数组。假设数组有 n 个元素，其递归的深度就为 log2n + 1，时间复杂度为 O(n)[(log2n + 1)]，因为时间复杂度考察当输入值大小趋近无穷时的情况，所以会忽略低阶项，时间复杂度为：o(nlog2n)。
+
+如果一个程序的运行时间是对数级的，则随着 n 的增大程序会渐渐慢下来。如果底数是 10，lg1000 等于 3，如果 n 为 1000000，lgn 等于 6，仅为之前的两倍。如果底数为 2，log21000 的值约为 10，log21000000 的值约为 19，约为之前的两倍。我们可以发现任意底数的一个对数函数其实都相差一个常数倍而已。所以我们认为 O(logn)已经可以表达所有底数的对数了，所以时间复杂度最后为： O(nlogn)。
+
+而在最差情况下，如果对一个已经排序好的数组，每次选择基准元素时总是选择第一个元素或者最后一个元素，那么每次都会有一个子集是空的，递归的层数将达到 n，最后导致算法的时间复杂度退化为 O(n²)。
+
+这也充分说明了一个基准的选择是多么的重要，而 v8 为了提高性能，就对基准的选择做了很多优化。
+
