@@ -94,4 +94,7 @@ var quickSort = function(arr) {
 　　}
 　　return quickSort(left).concat([pivot], quickSort(right));
 };
+
+//例如：quickSort([6,7,45,1,8,4,66,55])  
+//结果： [1, 4, 6, 7, 8, 45, 55, 66]
 ```
