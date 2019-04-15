@@ -26,7 +26,7 @@ function insertionSort(arr) {
                 break;
             }
         }
-        arr[j + 1] = element;
+        arr[j + 1] = element; // 由于 j-- 先赋值再运算，所以此时的 j = -1;  
     }
     return arr;
 }
