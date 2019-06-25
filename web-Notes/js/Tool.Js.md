@@ -459,4 +459,38 @@ console.log(generateMixed(7))
 ### 8.7 String.prototype.trim = function() {    return this.replace(/^\s*((?:[\S\s]*\S)?)\s*$/, '$1');  }
 
 
-## 九、 
+## 九、 时间差格式
+
+```js?linenums
+function getTimediff(t, n) {
+    var lastTime = new Date(t).getTime();
+    var nowTime = new Date(n).getTime();
+    var timediff = parseInt((lastTime - nowTime) / 1000);
+    if (timediff > 0) {
+        var d = Math.floor(timediff / 3600 / 24);
+        var h = Math.floor((timediff - d * 24 * 3600) / 3600);
+        var m = Math.floor((timediff - d * 24 * 3600 - h * 3600) / 60);
+        var s = Math.floor((timediff - d * 24 * 3600 - h * 3600 - m * 60));
+        if (d < 10 && d >= 0) {
+            d = "0" + d;
+        };
+        if (h < 10 && h >= 0) {
+            h = "0" + h;
+        };
+        if (m < 10 && m >= 0) {
+            m = "0" + m;
+        };
+        if (s < 10 && s >= 0) {
+            s = "0" + s;
+        };
+        return {
+            d: d,
+            h: h,
+            m: m,
+            s: s
+        };
+    } else {
+        return false;
+    }
+}
+```
