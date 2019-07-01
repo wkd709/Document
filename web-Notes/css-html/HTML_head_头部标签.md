@@ -331,7 +331,7 @@ http-equiv顾名思义，相当于http的文件头作用。
 ```html?linenums
 <link rel="alternate" href="http://m.abc.com/">
 ```
-### 3.2 PC页面用alternative指向移动页面，类似这样：
+### 3.2 移动页面用canonical指向PC页面，类似这样：
 
 ```html?linenums
 <link rel="canonical" href="http://www.abc.com/">
