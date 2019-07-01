@@ -324,3 +324,10 @@ http-equiv顾名思义，相当于http的文件头作用。
 <meta name="msapplication-tap-highlight" content="no">
 <!-- 适应移动端end -->
 ```
+三、移动站适配rel=alternate PC页和H5页适配标注
+
+### 3.1 PC页面用alternative指向移动页面，类似这样：
+
+```html?linenums
+<link rel="alternate" href="http://m.abc.com/">
+```
