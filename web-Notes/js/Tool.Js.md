@@ -497,3 +497,55 @@ function getTimediff(t, n) {
 
 ## 十、判断浏览器以及版本
 
+```js?linenums
+function n() {
+    var e, t, n = navigator.userAgent.toLowerCase(),
+        r = {};
+    
+    try {
+        if (t = n.match(/(?:newsarticle|safari|chrome|msie|micromessenger)[\/: ]([\d.]+)/),
+            t = t ? t[1] : "0",
+            r = {
+                version: t,
+                safari: /version.+safari/.test(n) || /safari[\/ ]+([\d.]+)/.test(n),
+                chrome: /chrome\/([\d.]+)/.test(n) || /crios\/([\d.]+)/.test(n),
+                ie: /msie/.test(n) || /trident/.test(n),
+                tt: /newsarticle/.test(n),
+                uc: /ucbrowser\/([\d.]+)/.test(n),
+                qq: /qqbrowser/.test(n),
+                wx: /micromessenger/.test(n),
+                facebook: /fban/.test(n),
+                twitter: /twitter/.test(n)
+            },
+            e = r.version.split(".")[0],
+            r.uc)
+            return "UC_" + (e = n.match(/ucbrowser\/([\d.]+)/)[1]);
+        if (r.qq)
+            return "QQ_" + (e = n.match(/qqbrowser\/([\d.]+)/)[1]);
+        if (r.tt)
+            return "toutiao_" + (e = n.match(/newsarticle\/([\d.]+)/)[1]);
+        if (r.chrome)
+            return "chrome_" + (e = n.match(/chrome\/([\d.]+)/)[1]);
+        if (r.wx)
+            return "weixin_" + (e = n.match(/micromessenger\/([\d.]+)/)[1]);
+        if (r.safari) {
+            if (n.match(/android/))
+                return "Webkit_" + n.match(/webkit\/([\d.]+)/)[1];
+            try {
+                n.match(/(?:version)[\/: ]([\d.]+)/) && (e = n.match(/(?:version)[\/: ]([\d.]+)/)[1])
+            } catch (e) { }
+            return "safari_" + e
+        }
+        if (r.ie)
+            return n.indexOf("rv:11") > -1 && (e = "11"),
+                "IE_" + e;
+        if (r.facebook)
+            return "facebook";
+        if (r.twitter)
+            return "twitter"
+    } catch (e) {
+        return "unkonw"
+    }
+    return "unkonw"
+}
+```
