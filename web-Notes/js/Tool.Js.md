@@ -494,3 +494,6 @@ function getTimediff(t, n) {
     }
 }
 ```
+
+## 十、判断浏览器以及版本
+
