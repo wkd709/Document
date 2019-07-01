@@ -336,3 +336,6 @@ http-equiv顾名思义，相当于http的文件头作用。
 ```html?linenums
 <link rel="canonical" href="http://www.abc.com/">
 ```
+
+**注意：**
+放那两个meta标签，页面并不会自动跳转，只是让搜索引擎知道PC对应的移动页面在哪，移动对应的PC页面在哪。
