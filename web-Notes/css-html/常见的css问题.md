@@ -427,8 +427,10 @@ WebP 像 JPEG 一样对图片细节丰富，像 PNG 一样支持透明，像 GIF
 雪碧图不属于格式，但属于一种应用形式
 
 ## 五、css解决display:inline-block;产生的缝隙（间隙）的方法
-![](./images/1562223124213.png)
+
 >原因：display：inline-block;元素的换行造成空白符。
+![](./images/1562223124213.png)
+
 
 ### 5.1 元素不换行
 
