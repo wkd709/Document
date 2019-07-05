@@ -1120,6 +1120,8 @@ background-repeat: inherit;
   
   　理解层叠上下文、层叠级别与 'z-index' 之间的关系。在可能出现定位元素相互覆盖的情况时，明确指定定位元素的 'z-index' 特性，避免此问题的出现。
    
- ## 十三、float
+ ## 十三、border
+ 
+ 
  
  
