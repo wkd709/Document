@@ -456,3 +456,20 @@ WebP 像 JPEG 一样对图片细节丰富，像 PNG 一样支持透明，像 GIF
 * 宽度小于左右部分宽度之和时，右侧部分会被挤下去
 
 ![](./images/1563159183769.png)
+
+
+```html?linenums
+<div class="wrap">
+    <div class="left">左侧</div>
+    <div class="right">右侧</div>
+    <div class="middle">中间</div>
+</div>
+
+<style type="text/css">
+    .wrap {background: #eee; overflow: hidden; padding: 20px;}  <!-- 生成BFC，计算高度时考虑浮动的元素 -->
+
+    .left {width: 200px; height: 50px; float: left; background: coral;}
+    .right {width: 120px; height:  200px; float: right; background: lightblue;}
+    .middle {margin-left: 220px; background: lightpink; margin-right: 140px;}
+</style>
+```
