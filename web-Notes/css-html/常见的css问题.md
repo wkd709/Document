@@ -473,3 +473,10 @@ WebP 像 JPEG 一样对图片细节丰富，像 PNG 一样支持透明，像 GIF
     .middle {margin-left: 220px; background: lightpink; margin-right: 140px;}
 </style>
 ```
+
+### 6.2 position 实现
+
+> 基于绝对定位的三栏布局：注意绝对定位的元素脱离文档流，相当于最近的已经定位的祖先元素进行定位。无需考虑HTML中结构的顺序。
+
+* 缺点：有顶部对齐问题，需要进行调整，注意中间的高度为整个内容的高度
+
