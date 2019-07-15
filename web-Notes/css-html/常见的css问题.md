@@ -503,3 +503,20 @@ WebP 像 JPEG 一样对图片细节丰富，像 PNG 一样支持透明，像 GIF
 
 * 存在的问题：不能自适应高度
 
+```html?linenums
+<div class="wrap">
+    <div class="middle">
+        <div class="main">中间</div>
+    </div>
+    <div class="left">左侧</div>
+    <div class="right">右侧</div>
+</div>
+
+<style type="text/css">
+    .wrap {overflow: hidden;}
+    .left {float: left; width: 200px; height: 100px; background: coral; margin-left: -100%;}
+    .middle {float: left; width: 100%; height: 100px; background: lightblue;}
+    .right {float: left; width: 120px; height: 100px; background: gray; margin-left: -120px;}
+    .main {margin: 0 140px 0 220px; background: lightpink;}
+</style>
+```
