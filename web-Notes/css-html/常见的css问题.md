@@ -481,3 +481,18 @@ WebP 像 JPEG 一样对图片细节丰富，像 PNG 一样支持透明，像 GIF
 * 缺点：有顶部对齐问题，需要进行调整，注意中间的高度为整个内容的高度
 
 ![](./images/1563159462082.png)
+
+```html?linenums
+<div class="wrap">
+    <div class="left">左侧</div>
+    <div class="middle">中间</div>
+    <div class="right">右侧</div>
+</div>
+
+<style type="text/css">
+    .wrap {background: lightpink;}
+    .left {width: 200px; height: 100px; position: absolute; top: 0; left: 0; background: coral;}
+    .right {width: 120px; height: 100px; position: absolute; top:0; right: 0; background: lightblue;}
+    .middle {height: 50px; margin: 0 140px 0 220px; background: #555;}
+</style>
+```
