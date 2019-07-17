@@ -1007,3 +1007,20 @@ b = (a--)+(--a); // 计算按照  1 + (-1)  =  0
 //完成后a的值   2   -1  最后输出 i = -1;
 ```
 
+## 十一、new Date()的浏览器兼容性问题
+
+### 11.1 问题原因
+
+```js?linenums
+var timestart = '2010-05-04';
+var timeend = '2015-04-01';
+var time1 = (timestart+' 00:00:00').toString();
+var time2 = (timeend+' 23:59:59').toString();
+timestart = new Date(time1);
+timeend = new Date(time2);
+```
+
+**各个浏览的表现结果：**
+
+*   在IE下的执行情况：
+![](./images/1563342407289.png)
