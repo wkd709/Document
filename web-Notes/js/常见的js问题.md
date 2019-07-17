@@ -1039,7 +1039,8 @@ timeend = new Date(time2);
 ### 11.2 正确的做法
 
 ```js?linenums
-
+var timestart = '2010-05-04';
+var timeend = '2015-04-01';
  var time1 = (timestart+' 00:00:00').toString();
  var time2 = (timeend+' 23:59:59').toString();
  timestart = new Date(Date.parse(str.replace(/-/g,"/"))).getTime();
