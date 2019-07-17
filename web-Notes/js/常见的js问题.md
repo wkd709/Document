@@ -1029,3 +1029,7 @@ timeend = new Date(time2);
 *    在Firefox下的执行情况：
 
 ![](./images/1563342454670.png)
+
+*    在Chrome下的执行情况：
+
+![](./images/1563342469272.png)
