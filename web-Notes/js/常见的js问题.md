@@ -1046,3 +1046,5 @@ var time2 = (timeend+' 23:59:59').toString();
 timestart = new Date(Date.parse(time1.replace(/-/g,"/"))).getTime();
 timeend = new Date(Date.parse(time2.replace(/-/g,"/"))).getTime();
 ```
+
+**主要的变化是对默认的日期格式进行了转换， 基于'/'格式的日期字符串，才是被各个浏览器所广泛支持的，‘-’连接的日期字符串，则是只在chrome下可以正常工作。**
