@@ -1036,3 +1036,12 @@ timeend = new Date(time2);
 
 **通过以上的分析，可以得知，这个javascript的脚本在Chrome下是可以正确执行的，但是在其他浏览器下报出错误**
 
+### 11.2 正确的做法
+
+```js?linenums
+
+ var time1 = (timestart+' 00:00:00').toString();
+ var time2 = (timeend+' 23:59:59').toString();
+ timestart = new Date(Date.parse(str.replace(/-/g,"/"))).getTime();
+ timeend = new Date(Date.parse(str.replace(/-/g,"/"))).getTime();
+```
