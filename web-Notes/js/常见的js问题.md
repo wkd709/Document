@@ -1033,3 +1033,6 @@ timeend = new Date(time2);
 *    在Chrome下的执行情况：
 
 ![](./images/1563342469272.png)
+
+**通过以上的分析，可以得知，这个javascript的脚本在Chrome下是可以正确执行的，但是在其他浏览器下报出错误**
+
