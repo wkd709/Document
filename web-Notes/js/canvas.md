@@ -32,3 +32,4 @@ if (canvas.getContext){
 
 ## 1、绘制矩形
 
+不同于SVG，HTML中的元素canvas只支持一种原生的图形绘制：**矩形**。
