@@ -16,3 +16,16 @@ const ctx = canvas.getContext('2d');
 ctx.fillStyle = 'green';
 ctx.fillRect(10, 10, 150, 100);
 ```
+
+**检查支持性:**
+
+```js?linenums
+var canvas = document.getElementById('tutorial');
+
+if (canvas.getContext){
+  var ctx = canvas.getContext('2d');
+  // drawing code here
+} else {
+  // canvas-unsupported code here
+}
+```
