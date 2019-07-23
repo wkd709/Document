@@ -65,3 +65,29 @@ function draw() {
 >* 然后你使用画图命令去画出路径。
 >* 之后你把路径封闭。
 >* 一旦路径生成，你就能通过描边或填充路径区域来渲染图形。
+
+**以下是所要用到的函数：**
+* beginPath()。新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。
+* closePath()。闭合路径之后图形绘制命令又重新指向到上下文中。
+* stroke()。通过线条来绘制图形轮廓。
+* fill()。通过填充路径的内容区域生成实心的图形。
+
+**注意：**
+* 当前路径为空，即调用beginPath()之后，或者canvas刚建的时候，第一条路径构造命令通常被视为是moveTo（），无论实际上是什么。出于这个原因，你几乎总是要在设置路径之后专门指定你的起始位置。
+* 当你调用fill()函数时，所有没有闭合的形状都会自动闭合，所以你不需要调用closePath()函数。但是调用stroke()时不会自动闭合。
+
+```js?linenums
+//绘制一个三角形
+function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
+    ctx.fill();
+  }
+}
+```
