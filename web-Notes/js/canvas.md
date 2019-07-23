@@ -29,3 +29,6 @@ if (canvas.getContext){
   // canvas-unsupported code here
 }
 ```
+
+## 1、绘制矩形
+
