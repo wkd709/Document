@@ -60,5 +60,14 @@ false
 > Math.max()
 -Infinity
 > Math.min()
-Infinity   
+Infinity
+```
+
+## 六、018 - 045 = -19
+
+> 在JavaScript中，前缀0会把任何数字转换成八进制。但是，八进制中不使用8，任何包含8的数字都将被无声地转换为常规的十进制数字。
+
+```js?linenums
+> 018 - 045
+-19  
 ```
