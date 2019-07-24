@@ -50,3 +50,15 @@ true
 > 0.1 + 0.2 == 0.3
 false   
 ```
+
+## 五、Math.max() 比 Math.min() 小
+
+>Math.max() > Math.min()返回false的事实看起来是错误的，但实际上它是正确的。
+>如果没有参数传给min()或max()，那么它将返回以下值。
+
+```js?linenums
+> Math.max()
+-Infinity
+> Math.min()
+Infinity   
+```
