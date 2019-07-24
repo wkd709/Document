@@ -21,4 +21,9 @@ false
 ```js?linenums
 > typeof(null)
 "object"
+
+//在这种情况下，null表示没有值。因此，null不应该是Object的实例。
+
+> null instanceof Object
+false    
 ```
