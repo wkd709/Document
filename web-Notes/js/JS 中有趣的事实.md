@@ -73,3 +73,49 @@ Infinity
 ```
 
 **因此，**018-019实际上等于十进制表达式18-37，因为045是八进制，但018是十进制。
+
+## 七、函数可以自执行
+
+>只需创建一个函数，并在调用其他函数时立即调用它，并使用 () 语法
+
+```js?linenums
+> (function()  { console.log('I am self executing');  })();
+I am self executing    
+```
+
+## 八、括号的位置问题
+
+>`return` 语句后面没有东西的时候它什么都不返回。 实际上，JS 后面 `return` 添加一个 `;`。
+> 如果要return多个值，就得用 { } ；
+
+```js?linenums
+> function foo() {
+   return
+   {
+      foo: 'bar'
+   }
+}
+> foo(); 
+undefined
+
+> function foo() {
+   return {
+      foo: 'bar'
+   }
+}
+> foo(); 
+{foo: "bar"}
+```
+
+## 九、没有整数数据类型
+
+>在 JS 中，没有int（整数）数据类型。 所有数字均为 Number 类型。 实际上它将int数的浮点值存储在内存上。
+
+## 十、sort() 函数自动类型转换
+
+>sort() 函数自动将值转换为字符串，这就会导致奇怪的事情发生。
+
+```js?linenums
+> [1,5,20,10].sort()
+(4) [1, 10, 20, 5]
+```
