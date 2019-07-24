@@ -27,3 +27,15 @@ false
 > null instanceof Object
 false    
 ```
+
+## 三、undefined 可以被定义
+
+>undefined不是 JS 中的保留关键字， 你可以为其指定值也不会报错，如果声明一个变量没有赋值，默认为 undefined
+
+```js?linenums
+> var some_var;
+undefined
+> some_var == undefined
+true
+> undefined = 'i am undefined'   
+```
