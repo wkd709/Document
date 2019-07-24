@@ -39,3 +39,14 @@ undefined
 true
 > undefined = 'i am undefined'   
 ```
+
+## 四、0.1 + 0.2 不等于 to 0.3
+
+>在JavaScript中，0.1 +0.2 == 0.3返回false。 事实是，javascript 将浮点数存储为二进制。
+
+```js?linenums
+> 0.1 + 0.2
+0.30000000000000004
+> 0.1 + 0.2 == 0.3
+false   
+```
