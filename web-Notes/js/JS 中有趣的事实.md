@@ -13,3 +13,12 @@ title: JS 中有趣的事实
 > NaN === NaN
 false
 ```
+
+## 二、null 是一个对象
+
+>null是一个对象。 听起来奇怪！ 对？ 但这是事实。
+
+```js?linenums
+> typeof(null)
+"object"
+```
