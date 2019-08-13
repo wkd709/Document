@@ -605,7 +605,7 @@ function getRandomString(number) {
 /**
  * 检测浏览器是不是ie 浏览器
  * */
-IEVersion: function () {
+function IEVersion() {
   var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
   var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
   var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
@@ -644,7 +644,7 @@ IEVersion: function () {
  * @param b
  * @returns {boolean}
  */
-isValueEqual(a, b) {
+function isValueEqual(a, b) {
   let toString = Object.prototype.toString;
 
   function isFunction(obj) {
@@ -748,5 +748,153 @@ isValueEqual(a, b) {
   }
 
   return eq(a, b)
+}
+```
+
+## 十五、数字 转换 为大写的汉字
+
+```js?linenums
+function convertCurrency(money) {
+  //汉字的数字
+  var cnNums = new Array('零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖');
+  //基本单位
+  var cnIntRadice = new Array('', '拾', '佰', '仟');
+  //对应整数部分扩展单位
+  var cnIntUnits = new Array('', '万', '亿', '兆');
+  //对应小数部分单位
+  var cnDecUnits = new Array('角', '分', '毫', '厘');
+  //整数金额时后面跟的字符
+  var cnInteger = '整';
+  //整型完以后的单位
+  var cnIntLast = '元';
+  //最大处理的数字
+  var maxNum = 999999999999999.9999;
+  //金额整数部分
+  var integerNum;
+  //金额小数部分
+  var decimalNum;
+  //输出的中文金额字符串
+  var chineseStr = '';
+  //分离金额后用的数组，预定义
+  var parts;
+  if (money == '') {
+	return '';
+  }
+  money = parseFloat(money);
+  if (money >= maxNum) {
+	//超出最大处理数字
+	return '';
+  }
+  if (money == 0) {
+	chineseStr = cnNums[0] + cnIntLast + cnInteger;
+	return chineseStr;
+  }
+  //转换为字符串
+  money = money.toString();
+  if (money.indexOf('.') == -1) {
+	integerNum = money;
+	decimalNum = '';
+  } else {
+	parts = money.split('.');
+	integerNum = parts[0];
+	decimalNum = parts[1].substr(0, 4);
+  }
+  //获取整型部分转换
+  if (parseInt(integerNum, 10) > 0) {
+	var zeroCount = 0;
+	var IntLen = integerNum.length;
+	for (var i = 0; i < IntLen; i++) {
+	  var n = integerNum.substr(i, 1);
+	  var p = IntLen - i - 1;
+	  var q = p / 4;
+	  var m = p % 4;
+	  if (n == '0') {
+		zeroCount++;
+	  } else {
+		if (zeroCount > 0) {
+		  chineseStr += cnNums[0];
+		}
+		//归零
+		zeroCount = 0;
+		chineseStr += cnNums[parseInt(n)] + cnIntRadice[m];
+	  }
+	  if (m == 0 && zeroCount < 4) {
+		chineseStr += cnIntUnits[q];
+	  }
+	}
+	chineseStr += cnIntLast;
+  }
+  //小数部分
+  if (decimalNum != '') {
+	var decLen = decimalNum.length;
+	for (var i = 0; i < decLen; i++) {
+	  var n = decimalNum.substr(i, 1);
+	  if (n != '0') {
+		chineseStr += cnNums[Number(n)] + cnDecUnits[i];
+	  }
+	}
+  }
+  if (chineseStr == '') {
+	chineseStr += cnNums[0] + cnIntLast + cnInteger;
+  } else if (decimalNum == '') {
+	chineseStr += cnInteger;
+  }
+  return chineseStr;
+}
+```
+
+## 十六、canvas 走势图划线
+```js?linenums
+/**
+ * canvas 走势图划线
+ * @param {*} initObj td点
+ * @param {*} initCanvas canvas box
+ * @param {*} initColor 线条颜色
+ */
+initLine(initObj, initCanvas, initColor) {
+  var td = $(initObj);
+  if ($(initCanvas + '>canvas').length) {
+	$(initCanvas + '>canvas').remove();
+  }
+  for (var i = td.length - 1; i > 0; i--) {
+	var tid = $(td[i]);
+	var fid = $(td[i - 1]);
+
+	var f_width = fid.outerWidth();
+	var f_height = fid.outerHeight();
+	var f_offset = fid.offset();
+
+	var f_top = f_offset.top;
+	var f_left = f_offset.left;
+
+	var t_offset = tid.offset();
+	var t_top = t_offset.top;
+	var t_left = t_offset.left;
+
+	var cvs_left = Math.min(f_left, t_left);
+	var cvs_top = Math.min(f_top, t_top);
+
+	var cvs = document.createElement("canvas");
+	cvs.width = Math.abs(f_left - t_left) < 20 ? 20 : Math.abs(f_left - t_left);
+	cvs.height = Math.abs(f_top - t_top);
+
+	cvs.style.position = "absolute";
+	cvs.style.visibility = "visible";
+	cvs.style.top = cvs_top + parseInt(f_height / 2) + "px";
+	cvs.style.left = cvs_left + parseInt(f_width / 2) + "px";
+
+	var cxt = cvs.getContext("2d");
+	cxt.save();
+	cxt.strokeStyle = initColor;
+	cxt.lineWidth = 1;
+	cxt.lineJoin = "round";
+	cxt.beginPath();
+	cxt.moveTo(f_left - cvs_left, f_top - cvs_top);
+	cxt.lineTo(t_left - cvs_left, t_top - cvs_top);
+	cxt.closePath();
+	cxt.stroke();
+	cxt.restore();
+	$(initCanvas).append(cvs);
+  }
 }
 ```
