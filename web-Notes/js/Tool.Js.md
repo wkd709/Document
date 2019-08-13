@@ -583,10 +583,10 @@ function n() {
 
 ```js?linenums
  /**方法功能：
-* 获取一个随机字符串
-* 参数：
-* number：返回字符串长度
-* */
+ * 获取一个随机字符串
+ * 参数：
+ * number：返回字符串长度
+ * */
 function getRandomString(number) {
 	var string = "qwertyuiopasdfghjklzxcvbnm123456789QWERTYUIOPLKJHGFDSAZXCVBNM";
   	var tempString = "";
