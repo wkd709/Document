@@ -2,4 +2,4 @@
 title: js中的类型判断typeof、instanceof、constructor和prototype
 ---
 
-## 一、
+## 一、typeof
