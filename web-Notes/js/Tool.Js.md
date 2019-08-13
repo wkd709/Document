@@ -553,6 +553,11 @@ function n() {
 ## 十一、深复制方法，支持字符 复制，引用中的 数据  对象 复制
 
 ```js?linenums
+/**方法功能：
+ * 深复制方法，支持字符 复制，引用中的 数据  对象 复制
+ * 参数：
+ * obj：需要拷贝的数据
+ * */
  function cloneData (obj) {
 	  var buf;
 	  if (obj instanceof Array) {
