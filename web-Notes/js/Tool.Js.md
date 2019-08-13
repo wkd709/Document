@@ -549,3 +549,27 @@ function n() {
     return "unkonw"
 }
 ```
+
+## 十一、深复制方法，支持字符 复制，引用中的 数据  对象 复制
+
+```js?linenums
+ function cloneData (obj) {
+	  var buf;
+	  if (obj instanceof Array) {
+		buf = [];
+		var i = obj.length;
+		while (i--) {
+		  buf[i] = this.cloneData(obj[i]);
+		}
+		return buf;
+	  } else if (obj instanceof Object) {
+		buf = {};
+		for (var k in obj) {
+		  buf[k] = this.cloneData(obj[k]);
+		}
+		return buf;
+	  } else {
+		return obj;
+	  }
+}
+```
