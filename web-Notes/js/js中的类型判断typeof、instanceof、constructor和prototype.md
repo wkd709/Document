@@ -1,7 +1,8 @@
 ---
 title: js中的类型判断typeof、instanceof、constructor和prototype
----
 
+---
+https://www.mwcxs.top/page/725.html
 >基本类型：String、Number、Boolean、Symbol、Undefined、Null 
 >引用类型：Object 。 引用类型除 Object 外，还包括 Function 、Array、RegExp、Date 等等。
 
@@ -43,3 +44,5 @@ console.log(typeof error); // object
 ## 二、instanceof
 
 使用instanceof的前提条件：object instanceof constructor。object--要检测的对象。constructor--某个构造函数。说明使用这个instanceof必须是用来检测对象的的类型，不能检测其他类型。
+
+
