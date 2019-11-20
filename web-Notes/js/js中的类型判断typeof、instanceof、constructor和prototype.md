@@ -42,4 +42,4 @@ console.log(typeof error); // object
 
 ## 二、instanceof
 
-使用instanceof的前提条件：object instanceof constructor。
+使用instanceof的前提条件：object instanceof constructor。object--要检测的对象。constructor--某个构造函数。说明使用这个instanceof必须是用来检测对象的的类型，不能检测其他类型。
