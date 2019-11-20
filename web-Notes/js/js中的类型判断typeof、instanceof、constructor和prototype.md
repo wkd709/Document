@@ -36,3 +36,5 @@ var error = new Error();
 console.log(typeof date); // object
 console.log(typeof error); // object
 ```
+
+所以还需要更好的区分。
