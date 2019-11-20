@@ -26,3 +26,6 @@ typeof Symbol   // 'function'
 
 ![](./images/1574233509451.png)
 
+**注意：typeof 可以检测函数类型**
+
+但是在object下还有很多细分内部属性：Array，Function，Date，RegExp，Error等。
