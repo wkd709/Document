@@ -41,3 +41,5 @@ console.log(typeof error); // object
 
 
 ## 二、instanceof
+
+使用instanceof的前提条件：object instanceof constructor。
