@@ -25,3 +25,4 @@ typeof Symbol   // 'function'
 ```
 
 ![](./images/1574233509451.png)
+
