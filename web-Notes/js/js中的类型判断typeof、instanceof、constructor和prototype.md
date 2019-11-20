@@ -23,3 +23,5 @@ typeof null    //'object'
 typeof /^\d/   //'object'
 typeof Symbol   // 'function'
 ```
+
+![](./images/1574233509451.png)
