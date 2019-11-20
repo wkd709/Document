@@ -1,7 +1,7 @@
 ---
 title: js中的类型判断typeof、instanceof、constructor和prototype
 ---
-https://www.mwcxs.top/page/725.html
+链接：https://www.mwcxs.top/page/725.html
 
 
 >基本类型：String、Number、Boolean、Symbol、Undefined、Null 
