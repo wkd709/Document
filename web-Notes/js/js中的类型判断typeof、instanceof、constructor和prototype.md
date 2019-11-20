@@ -1,6 +1,5 @@
 ---
 title: js中的类型判断typeof、instanceof、constructor和prototype
-
 ---
 https://www.mwcxs.top/page/725.html
 
