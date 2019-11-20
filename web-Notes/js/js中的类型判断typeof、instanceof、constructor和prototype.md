@@ -29,3 +29,10 @@ typeof Symbol   // 'function'
 **注意：typeof 可以检测函数类型**
 
 但是在object下还有很多细分内部属性：Array，Function，Date，RegExp，Error等。
+
+```js
+var date = new Date();
+var error = new Error();
+console.log(typeof date); // object
+console.log(typeof error); // object
+```
