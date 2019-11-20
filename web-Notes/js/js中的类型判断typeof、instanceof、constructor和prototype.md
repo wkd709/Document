@@ -38,3 +38,6 @@ console.log(typeof error); // object
 ```
 
 所以还需要更好的区分。
+
+
+## 二、instanceof
