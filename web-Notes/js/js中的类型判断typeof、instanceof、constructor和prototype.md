@@ -64,4 +64,10 @@ var type = function (data) {
             .toLowerCase()
         return dataType
     };
+	
+	//eg
+	type("a") // string
+	type(1) // number
+	type(window) // window
+	type(document.querySelector("h1")) // element
 ```
