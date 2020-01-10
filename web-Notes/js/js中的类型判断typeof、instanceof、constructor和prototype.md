@@ -48,4 +48,4 @@ console.log(typeof error); // object
 
 
 
-## 三、
+## 三、Object.prototype.toString.call()
