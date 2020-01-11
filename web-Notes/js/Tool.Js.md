@@ -954,5 +954,5 @@ type(111); //string
 window.location.href="weixin://";
 
 //例如：
-H5操作微信：http://www.xiaoshu168.com/jquery/172.html
+//H5操作微信：http://www.xiaoshu168.com/jquery/172.html
 ```
