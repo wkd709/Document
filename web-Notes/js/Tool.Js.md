@@ -898,3 +898,18 @@ initLine(initObj, initCanvas, initColor) {
   }
 }
 ```
+
+## 十七、千分位划分
+
+场景：页面展示金额，进行位数划分。
+
+```js
+const AmountSlite = (value) => {
+        const regExp = /(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
+        const ret = (value + '').replace(regExp, '$1,');
+        return ret;
+};
+
+//例如
+console.log(AmountSlite(123456.789));//123,456.789
+```
