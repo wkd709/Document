@@ -930,3 +930,9 @@ reg.test(111);//false
 reg.test(99.1);//true
 reg.test(0.11);//true
 ```
+
+## 十九、获取一个月的最后一天
+
+```js
+new Date('2020', '1', 0).getDate();
+```
