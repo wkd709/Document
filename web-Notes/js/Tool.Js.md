@@ -947,3 +947,12 @@ const type = data => Object.prototype.toString.call(data).replace(/^\[object (.+
 //例如：
 type(111); //string
 ```
+
+## 二十一、Js唤起微信
+
+```js
+window.location.href="weixin://";
+
+//例如：
+H5操作微信：http://www.xiaoshu168.com/jquery/172.html
+```
