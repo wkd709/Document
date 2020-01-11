@@ -939,3 +939,11 @@ new Date('2020', '1', 0).getDate();
 
 ## 二十、任意类型判断
 
+场景：获取变量类型
+
+```js
+const type = data => Object.prototype.toString.call(data).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
+
+//例如：
+type(111); //string
+```
