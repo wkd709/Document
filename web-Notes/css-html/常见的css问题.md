@@ -525,3 +525,22 @@ WebP 像 JPEG 一样对图片细节丰富，像 PNG 一样支持透明，像 GIF
 
 ### 6.4 flex布局
 
+## 七、解决块级元素下图片底部有空白间隙的问题
+
+```html
+<div class="box">
+ <img  src="./panda.jpg" />
+</div>
+<style>
+.box {
+  width: 300px;
+  border: 1px solid #ddd;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+</style>
+```
+
+![](./images/1583807814151.png)
