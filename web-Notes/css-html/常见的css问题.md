@@ -557,3 +557,4 @@ img {
 *	将 vertical-align 设置为 top，bottom，或者 middle 等值（利用属性值的表现行为）
 *	将 line-height 设置为 0 （利用 line-height 为 0 时，基线上移）
 *	将 font-size 设置为 0 （如果 line-height 的值为相对值）
+* 	将 img 设置浮动或者绝对定位 （如果布局允许的话）
