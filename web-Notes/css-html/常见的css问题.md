@@ -554,3 +554,6 @@ img {
 ### 7.2 解决办法
 
 * 	将图片设置为display：block（利用vertical-align的生效前提）
+*	将 vertical-align 设置为 top，bottom，或者 middle 等值（利用属性值的表现行为）
+*	将 line-height 设置为 0 （利用 line-height 为 0 时，基线上移）
+*	将 font-size 设置为 0 （如果 line-height 的值为相对值）
